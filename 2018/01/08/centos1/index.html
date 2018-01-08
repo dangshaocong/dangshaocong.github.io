@@ -5,18 +5,18 @@
   
   <title>centos | 记录生活点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+  <meta name="description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程rm -f /var/run/yum.pid 查看用yum安装的包yum list installed  centos上检查某软件包是否已经安装1、rpm(RedHat Pac">
 <meta name="keywords" content="centos yum">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos">
 <meta property="og:url" content="http://yoursite.com/2018/01/08/centos1/index.html">
 <meta property="og:site_name" content="记录生活点滴">
-<meta property="og:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+<meta property="og:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程rm -f /var/run/yum.pid 查看用yum安装的包yum list installed  centos上检查某软件包是否已经安装1、rpm(RedHat Pac">
 <meta property="og:image" content="http://yoursite.com/2018/01/08/centos1/centos/error.png">
-<meta property="og:updated_time" content="2018-01-08T09:01:29.045Z">
+<meta property="og:updated_time" content="2018-01-08T09:19:10.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos">
-<meta name="twitter:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+<meta name="twitter:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程rm -f /var/run/yum.pid 查看用yum安装的包yum list installed  centos上检查某软件包是否已经安装1、rpm(RedHat Pac">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/08/centos1/centos/error.png">
   
     <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
@@ -59,9 +59,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -92,9 +92,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="centos上使用yum-命令时有下面的错误信息"><a href="#centos上使用yum-命令时有下面的错误信息" class="headerlink" title="centos上使用yum 命令时有下面的错误信息"></a>centos上使用yum 命令时有下面的错误信息</h3><pre><code>another app is currently holding the yum lock;waiting for it to exit 
-</code></pre><p><img src="/2018/01/08/centos1/centos/error.png" alt="错误截图"></p>
-<p>解决办法：可以强制关闭yum 进程<br><figure class="highlight plain"><figcaption><span>-f</span><a href="/var/run/yum.pid">```</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">产看用yum安装的包</div><div class="line">``` yum list installed</div></pre></td></tr></table></figure></p>
+        <h3 id="centos上使用yum-命令时有下面的错误信息"><a href="#centos上使用yum-命令时有下面的错误信息" class="headerlink" title="centos上使用yum 命令时有下面的错误信息"></a>centos上使用yum 命令时有下面的错误信息</h3><p>another app is currently holding the yum lock;waiting for it to exit </p>
+<p><img src="/2018/01/08/centos1/centos/error.png" alt="错误截图"></p>
+<p>解决办法：可以强制关闭yum 进程<br>rm -f /var/run/yum.pid</p>
+<p>查看用yum安装的包<br>yum list installed </p>
 <h3 id="centos上检查某软件包是否已经安装"><a href="#centos上检查某软件包是否已经安装" class="headerlink" title="centos上检查某软件包是否已经安装"></a>centos上检查某软件包是否已经安装</h3><p>1、rpm(RedHat Package Manager)包安装的，可以用rpm -qa看到，如果要查找某软件包是否安装，用 rpm -qa | grep “软件或者包的名字”。</p>
 <p>2、以deb包安装的，可以用dpkg -l能看到。如果是查找指定软件包，用dpkg -l | grep “软件或者包的名字”；</p>
 <p>3、yum方法安装的，可以用yum list installed查找，如果是查找指定包，命令后加 | grep “软件名或者包名”；</p>
@@ -108,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/08/centos1/" data-id="cjc5zalob0000i4v013ztd3ee" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/01/08/centos1/" data-id="cjc5zxa9i0001q4v01fzdldnf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-yum/">centos yum</a></li></ul>
@@ -121,7 +122,7 @@
   
   
     <a href="/2018/01/05/readme/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">readme</div>
     </a>
   
@@ -139,7 +140,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a></li></ul>
     </div>
@@ -149,7 +150,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a>
     </div>
@@ -168,7 +169,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -205,7 +206,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 mino<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
