@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>pyexcept | 记录生活点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为了增强程序的健壮性，管理运行时预见的错误—–异常1. 错误是程序不能执行 一般包括语法错误和逻辑错误 2. 异常是程序出现了错误，而在正常控制流以外采取的措施 - 异常处理的过程一般有两步，引发异常和处理异常 - 处理异常 一般是直接pass或者执行一场之后的逻辑 Python常见的异常 NameError 当调用一个没有定义的变量时解释器出现的异常&amp;gt;&amp;gt;&amp;gt; a Tracebac">
+<meta name="keywords" content="异常处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pyexcept">
+<meta property="og:url" content="http://yoursite.com/2017/11/11/pyexcept/index.html">
+<meta property="og:site_name" content="记录生活点滴">
+<meta property="og:description" content="为了增强程序的健壮性，管理运行时预见的错误—–异常1. 错误是程序不能执行 一般包括语法错误和逻辑错误 2. 异常是程序出现了错误，而在正常控制流以外采取的措施 - 异常处理的过程一般有两步，引发异常和处理异常 - 处理异常 一般是直接pass或者执行一场之后的逻辑 Python常见的异常 NameError 当调用一个没有定义的变量时解释器出现的异常&amp;gt;&amp;gt;&amp;gt; a Tracebac">
+<meta property="og:updated_time" content="2018-01-08T08:06:07.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pyexcept">
+<meta name="twitter:description" content="为了增强程序的健壮性，管理运行时预见的错误—–异常1. 错误是程序不能执行 一般包括语法错误和逻辑错误 2. 异常是程序出现了错误，而在正常控制流以外采取的措施 - 异常处理的过程一般有两步，引发异常和处理异常 - 处理异常 一般是直接pass或者执行一场之后的逻辑 Python常见的异常 NameError 当调用一个没有定义的变量时解释器出现的异常&amp;gt;&amp;gt;&amp;gt; a Tracebac">
+  
+    <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记录生活点滴</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">付出就会有收获</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pyexcept" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/11/pyexcept/" class="article-date">
+  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">2017-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pyexcept
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为了增强程序的健壮性，管理运行时预见的错误—–异常"><a href="#为了增强程序的健壮性，管理运行时预见的错误—–异常" class="headerlink" title="为了增强程序的健壮性，管理运行时预见的错误—–异常"></a>为了增强程序的健壮性，管理运行时预见的错误—–异常</h2><pre><code>1. 错误是程序不能执行 一般包括语法错误和逻辑错误
+2. 异常是程序出现了错误，而在正常控制流以外采取的措施
+- 异常处理的过程一般有两步，引发异常和处理异常
+- 处理异常 一般是直接pass或者执行一场之后的逻辑
+</code></pre><h2 id="Python常见的异常"><a href="#Python常见的异常" class="headerlink" title="Python常见的异常"></a>Python常见的异常</h2><ul>
+<li>NameError 当调用一个没有定义的变量时解释器出现的异常<pre><code>&gt;&gt;&gt; a
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &apos;a&apos; is not defined
+</code></pre></li>
+<li>ZeroDivisionError 除数为0的error</li>
+<li>SyntaxError Python解释器语法错误</li>
+<li>indexError 序列的索引超标</li>
+<li>keyError 字典的键问题，字典中不存在键</li>
+<li>IOError 文件的异常，没有文件或者打开异常</li>
+<li>AttributeError 属性异常对象中没有属性</li>
+</ul>
+<p>##异常的处理</p>
+<ol>
+<li>try-except 如果try通过不执行except里面的逻辑</li>
+<li>try-finally 不管try有没有通过都要执行finally里面的代码</li>
+<li>try-except-finally</li>
+<li>try-except-else-finally</li>
+</ol>
+<h2 id="例子-返回浮点型"><a href="#例子-返回浮点型" class="headerlink" title="例子 返回浮点型"></a>例子 返回浮点型</h2><pre><code>def safe_float(obj):
+  try:
+     return float(obj)
+  except ValueError, e:
+     return &apos;ValueError&apos;, e
+  except TypeError, e:
+     return &apos;TypeError&apos;, e
+
+ F:\Python2\python.exe F:/pycode/Error/handle_error.py
+(&apos;TypeError&apos;, TypeError(&apos;float() argument must be a string or a number&apos;,))
+(&apos;ValueError&apos;, ValueError(&apos;could not convert string to float: xxxx&apos;,))
+</code></pre><h2 id="捕获多处异常和异常参数"><a href="#捕获多处异常和异常参数" class="headerlink" title="捕获多处异常和异常参数"></a>捕获多处异常和异常参数</h2><pre><code>def safe_float1(obj):
+ try:
+     return float(obj)
+ except (TypeError, ValueError), dig:
+     print type(dig)
+     print dig
+     return str(dig)
+
+&lt;type &apos;exceptions.TypeError&apos;&gt;
+ float() argument must be a string or a number
+ float() argument must be a string or a number
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/11/pyexcept/" data-id="cjc5xipji0005ocv0f0huqiqm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异常处理/">异常处理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/05/readme/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          readme
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/31/Timer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python启动定时任务</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/05/readme/">readme</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/11/pyexcept/">pyexcept</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/31/Timer/">python启动定时任务</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/29/blue/">blue</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 mino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
