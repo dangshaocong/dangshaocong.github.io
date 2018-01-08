@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python启动定时任务 | 记录生活点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="python启动定时任务1.time模块time.sleep(n)例如下面的例子1234def work(n):             - 每隔n 秒 输出 1到10之间的一个数  for i in range(10):      print i      time.sleep(n) 上面的实例是阻塞的，在sleep的时间内程序一直堵塞详情请参考官方文档—–time.sleep 2.sched">
+<meta name="keywords" content="python启动定时任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python启动定时任务">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/Timer/index.html">
+<meta property="og:site_name" content="记录生活点滴">
+<meta property="og:description" content="python启动定时任务1.time模块time.sleep(n)例如下面的例子1234def work(n):             - 每隔n 秒 输出 1到10之间的一个数  for i in range(10):      print i      time.sleep(n) 上面的实例是阻塞的，在sleep的时间内程序一直堵塞详情请参考官方文档—–time.sleep 2.sched">
+<meta property="og:updated_time" content="2017-10-31T11:55:06.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python启动定时任务">
+<meta name="twitter:description" content="python启动定时任务1.time模块time.sleep(n)例如下面的例子1234def work(n):             - 每隔n 秒 输出 1到10之间的一个数  for i in range(10):      print i      time.sleep(n) 上面的实例是阻塞的，在sleep的时间内程序一直堵塞详情请参考官方文档—–time.sleep 2.sched">
+  
+    <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记录生活点滴</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">付出就会有收获</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Timer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/31/Timer/" class="article-date">
+  <time datetime="2017-10-31T11:36:30.000Z" itemprop="datePublished">2017-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python启动定时任务
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="python启动定时任务"><a href="#python启动定时任务" class="headerlink" title="python启动定时任务"></a>python启动定时任务</h3><h1 id="1-time模块"><a href="#1-time模块" class="headerlink" title="1.time模块"></a>1.time模块</h1><p><code>time.sleep(n)</code><br>例如下面的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def work(n):             - 每隔n 秒 输出 1到10之间的一个数</div><div class="line">  for i in range(10):</div><div class="line">      print i</div><div class="line">      time.sleep(n)</div></pre></td></tr></table></figure></p>
+<p>上面的实例是阻塞的，在sleep的时间内程序一直堵塞<br>详情请参考官方文档—–<a href="https://docs.python.org/2/library/time.html?sleep#time.sleep" target="_blank" rel="external">time.sleep</a></p>
+<h1 id="2-sched-模块"><a href="#2-sched-模块" class="headerlink" title="2.sched 模块"></a>2.sched 模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">  1.导入sched模块</div><div class="line">  import sched</div><div class="line">----------------------------------------------------------------------------------</div><div class="line">  2.创建scheduler对象</div><div class="line">  s = sched.scheduler(time.time, time.sleep)</div><div class="line">  - time.time:返回时间戳的函数</div><div class="line">  - time.sleep:可以在定时未到达之前阻塞</div><div class="line">------------------------------------------------------------------------------------</div><div class="line">  3.定义要执行的任务</div><div class="line">  def worker(n):</div><div class="line">        pass</div><div class="line">-------------------------------------------------------------------------------------</div><div class="line">  4.将任务添加到scheduler的盒子中</div><div class="line">  s.enter(delay,priority,action,arguments)</div><div class="line">  - delay:int /float型的表示多少秒后执行这个action任务</div><div class="line">  - priority:优先级表示当多个任务同时在一个时刻将执行优先执行那个任务</div><div class="line">    0优先级最高，数字越小优先级越高</div><div class="line">  - action: 执行的任务在上面的例子中也就是函数名worker</div><div class="line">  - arguments:参数列表以元组的形式如：(n,)</div><div class="line">    如果没有参数传入直接传空括号()</div><div class="line">--------------------------------------------------------------------------------------</div><div class="line">  5.运行任务</div><div class="line">  s.run()</div></pre></td></tr></table></figure>
+<p>在多线程环境中由于线程全局锁安全，一个任务没结束，就要等待也是阻塞的详细请查看官方库—-<a href="https://docs.python.org/2/library/sched.html" target="_blank" rel="external">sched</a></p>
+<h1 id="3-threading-Timer"><a href="#3-threading-Timer" class="headerlink" title="3.threading.Timer()"></a>3.threading.Timer()</h1><p>为了解决上面的阻塞问题，再多线程的环境中能够并发执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  1.导入模块</div><div class="line">  from threading import Timer</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  2.定义要执行的任务</div><div class="line">  def work(arg):</div><div class="line">        pass</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  3.启动执行</div><div class="line">  Timer(delay, work, (arg)).start()</div><div class="line">  - 不需要区分优先级可以同时执行任务delay相同时就同时执行任务</div><div class="line">  -  delay:int /float型的表示多少秒后执行这个work任务</div><div class="line">  -  work: 执行任务的方法名字</div><div class="line">  -  arg:参数列表元祖(arg,)如果没有就是()</div></pre></td></tr></table></figure></p>
+<p>详情请参考官方文档：<a href="https://docs.python.org/2/library/sched.html?highlight=threading%20timer" target="_blank" rel="external">threading.Timer</a></p>
+<h1 id="4-更加高级的任务调度框架-apscheduler"><a href="#4-更加高级的任务调度框架-apscheduler" class="headerlink" title="4.更加高级的任务调度框架 apscheduler"></a>4.更加高级的任务调度框架 apscheduler</h1><p>   官方文档   <a href="http://apscheduler.readthedocs.io/en/latest/" target="_blank" rel="external">查看</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> 1.导入模块</div><div class="line">  from apscheduler.schedulers.blocking import BlockingScheduler</div><div class="line"></div><div class="line"> 2.初始化一个任务实例</div><div class="line">  sched = BlockingScheduler()</div><div class="line"></div><div class="line"> 3.添加作业任务</div><div class="line"> sched.add_job(my_job, &apos;interval&apos;, seconds=5)</div><div class="line">- my_job：作业任务</div><div class="line">-‘ interval ’  ‘cron ’等等</div><div class="line"></div><div class="line">4.启动任务</div><div class="line">  sched.start()</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/31/Timer/" data-id="cj9fk3qnl0000gwvqrbq8ce23" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/29/blue/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">blue</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/31/Timer/">python启动定时任务</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/29/blue/">blue</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/29/hello/">知名网站</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 mino<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
