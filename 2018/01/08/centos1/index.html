@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2018/1 | 记录生活点滴</title>
+  <title>centos | 记录生活点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生苦短">
-<meta property="og:type" content="website">
-<meta property="og:title" content="记录生活点滴">
-<meta property="og:url" content="http://yoursite.com/archives/2018/01/index.html">
+  <meta name="description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+<meta name="keywords" content="centos yum">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos">
+<meta property="og:url" content="http://yoursite.com/2018/01/08/centos1/index.html">
 <meta property="og:site_name" content="记录生活点滴">
-<meta property="og:description" content="人生苦短">
+<meta property="og:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+<meta property="og:image" content="http://yoursite.com/2018/01/08/centos1/centos/error.png">
+<meta property="og:updated_time" content="2018-01-08T09:01:29.045Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录生活点滴">
-<meta name="twitter:description" content="人生苦短">
+<meta name="twitter:title" content="centos">
+<meta name="twitter:description" content="centos上使用yum 命令时有下面的错误信息another app is currently holding the yum lock;waiting for it to exit   解决办法：可以强制关闭yum 进程-f```12产看用yum安装的包``` yum list installed centos上检查某软件包是否已经安装1、rpm(RedHat Package Manager)">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/08/centos1/centos/error.png">
   
     <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
   
@@ -66,58 +70,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/08/centos1/" class="archive-article-date">
-  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">Jan 8</time>
+        <section id="main"><article id="post-centos1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/08/centos1/" class="article-date">
+  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">2018-01-08</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/centos1/">centos</a>
+    <h1 class="article-title" itemprop="name">
+      centos
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/05/readme/" class="archive-article-date">
-  <time datetime="2018-01-05T14:18:21.000Z" itemprop="datePublished">Jan 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/readme/">readme</a>
-    </h1>
-  
+        <h3 id="centos上使用yum-命令时有下面的错误信息"><a href="#centos上使用yum-命令时有下面的错误信息" class="headerlink" title="centos上使用yum 命令时有下面的错误信息"></a>centos上使用yum 命令时有下面的错误信息</h3><pre><code>another app is currently holding the yum lock;waiting for it to exit 
+</code></pre><p><img src="/2018/01/08/centos1/centos/error.png" alt="错误截图"></p>
+<p>解决办法：可以强制关闭yum 进程<br><figure class="highlight plain"><figcaption><span>-f</span><a href="/var/run/yum.pid">```</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">产看用yum安装的包</div><div class="line">``` yum list installed</div></pre></td></tr></table></figure></p>
+<h3 id="centos上检查某软件包是否已经安装"><a href="#centos上检查某软件包是否已经安装" class="headerlink" title="centos上检查某软件包是否已经安装"></a>centos上检查某软件包是否已经安装</h3><p>1、rpm(RedHat Package Manager)包安装的，可以用rpm -qa看到，如果要查找某软件包是否安装，用 rpm -qa | grep “软件或者包的名字”。</p>
+<p>2、以deb包安装的，可以用dpkg -l能看到。如果是查找指定软件包，用dpkg -l | grep “软件或者包的名字”；</p>
+<p>3、yum方法安装的，可以用yum list installed查找，如果是查找指定包，命令后加 | grep “软件名或者包名”；</p>
+<p>4、如果是以源码包自己编译安装的，例如.tar.gz或者tar.bz2形式的，这个只能看可执行文件是否存在了，上面两种方法都看不到这种源码形式安装的包。如果是以root用户安装的，可执行程序通常都在/sbin:/usr/bin目录下。</p>
+<p> 附加：</p>
+<ul>
+<li><a href="https://pkgs.org/" target="_blank" rel="external">Linux rpm包集合</a></li>
+<li><a href="http://www.cnblogs.com/xiaochaohuashengmi/archive/2011/10/08/2203153.html" target="_blank" rel="external">rpm使用</a></li>
+</ul>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/08/centos1/" data-id="cjc5zalob0000i4v013ztd3ee" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-yum/">centos yum</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/05/readme/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">readme</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
