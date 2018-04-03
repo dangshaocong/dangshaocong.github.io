@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/03/Decorator/</loc>
+    <lastmod>2018-04-03T14:05:50.461Z</lastmod>
+    <data>
+        <display>
+        <title>装饰器</title>
+        <pubTime>2018-04-03T14:01:00.000Z</pubTime>
+        
+        <tag>装饰器的使用</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/01/22/process/</loc>
-    <lastmod>2018-02-01T11:12:18.828Z</lastmod>
+    <lastmod>2018-02-01T11:12:22.301Z</lastmod>
     <data>
         <display>
         <title>process for python</title>

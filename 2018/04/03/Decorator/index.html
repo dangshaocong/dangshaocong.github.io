@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="/js/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>装饰器 | 记录生活点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="装饰器的使用" />
+  
+  
+  
+  
+  <meta name="description" content="python装饰器 前言一个形象的比喻内衣是我们都需要穿的，但是冬天我们需要穿棉衣。装饰器就像我们的棉衣一样，在不影响内衣的作用条件下，给我们提供保暖的功能。 装饰器的本质装饰器本质上就是一个python函数，它可以让其它的函数在不需要做任何代码变动的前提下增加额外的功能。装饰器的返回值也是一个函数对象。 装饰器的使用场景经常使用在有切面需求的场景里面。比如最简单的插入日志，性能测试，事物处理，缓">
+<meta name="keywords" content="装饰器的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="装饰器">
+<meta property="og:url" content="http://yoursite.com/2018/04/03/Decorator/index.html">
+<meta property="og:site_name" content="记录生活点滴">
+<meta property="og:description" content="python装饰器 前言一个形象的比喻内衣是我们都需要穿的，但是冬天我们需要穿棉衣。装饰器就像我们的棉衣一样，在不影响内衣的作用条件下，给我们提供保暖的功能。 装饰器的本质装饰器本质上就是一个python函数，它可以让其它的函数在不需要做任何代码变动的前提下增加额外的功能。装饰器的返回值也是一个函数对象。 装饰器的使用场景经常使用在有切面需求的场景里面。比如最简单的插入日志，性能测试，事物处理，缓">
+<meta property="og:updated_time" content="2018-04-03T14:05:50.461Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="装饰器">
+<meta name="twitter:description" content="python装饰器 前言一个形象的比喻内衣是我们都需要穿的，但是冬天我们需要穿棉衣。装饰器就像我们的棉衣一样，在不影响内衣的作用条件下，给我们提供保暖的功能。 装饰器的本质装饰器本质上就是一个python函数，它可以让其它的函数在不需要做任何代码变动的前提下增加额外的功能。装饰器的返回值也是一个函数对象。 装饰器的使用场景经常使用在有切面需求的场景里面。比如最简单的插入日志，性能测试，事物处理，缓">
+  
+    <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+</head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="记录生活点滴" rel="home"> 记录生活点滴 </a>
+            
+          </h1>
+
+          
+            <div class="site-description">人生苦短</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Decorator" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      装饰器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/04/03/Decorator/" class="article-date">
+	  <time datetime="2018-04-03T14:01:00.000Z" itemprop="datePublished">April 3, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python装饰器"><a href="#python装饰器" class="headerlink" title="python装饰器"></a>python装饰器</h2><hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><pre><code>一个形象的比喻内衣是我们都需要穿的，但是冬天我们需要穿棉衣。装饰器就像我们的棉衣一样，在不影响内衣的作用条件下，给我们提供保暖的功能。
+</code></pre><h3 id="装饰器的本质"><a href="#装饰器的本质" class="headerlink" title="装饰器的本质"></a>装饰器的本质</h3><pre><code>装饰器本质上就是一个python函数，它可以让其它的函数在不需要做任何代码变动的前提下增加额外的功能。装饰器的返回值也是一个函数对象。
+</code></pre><h3 id="装饰器的使用场景"><a href="#装饰器的使用场景" class="headerlink" title="装饰器的使用场景"></a>装饰器的使用场景</h3><pre><code>经常使用在有切面需求的场景里面。比如最简单的插入日志，性能测试，事物处理，缓存和权限校验等场景。装饰器是解决这类问题的绝佳设计。
+</code></pre><h3 id="装饰器的作用"><a href="#装饰器的作用" class="headerlink" title="装饰器的作用"></a>装饰器的作用</h3><pre><code>有了装饰器，就可以抽离出大量的与函数功能本身无关的雷同代码并继续重用，装饰器的作用就是为已经存在的对象添加额外的功能。
+</code></pre><p>###使用实例<br>   先来看一个最简单的例子</p>
+<pre><code>def foo():
+    print (&apos;i am fool&apos;)
+</code></pre><p>现在有一个新的需求，希望能记录下上面函数的运行日志，于是在代码中添加一行日志代码：</p>
+<pre><code>def foo():
+    print (&apos;i am fool&apos;)
+    logging.info(&apos;fool is running&apos;)
+</code></pre><p>如果其他的函数也有类似的需求bar(),bar1() 怎么做？再写logging<br>吗，这样就造成大量雷同的代码，为了减少重复写代码，我们可以这样做，专门写一个日志处理的函数，处理日志，日志处理完成之后，在进行相应的逻辑。</p>
+<pre><code>def use_logging(func):
+    logging.warn(&apos;%s is running &apos;%func.__name__)
+    func()
+
+
+def bar():
+    print (&apos;i am bar &apos;)
+
+use_logging(bar)
+</code></pre><p> 逻辑上不难理解，但是这样每次我们都需要将一个函数作为参数传递给use_logging()而且这种方式已经破坏了原有代码的逻辑结构。之前的逻辑是运行bar，现在不得不运行use_logging(bar)那么有没有更好的方式呢，当然是装饰器。简单的装饰器</p>
+<pre><code>def use_logging(func):
+       def wrapper(*args,**kargs):
+           logging.warn(&apos;%s is running&apos;%func.__name__)
+           return func(*args,**kargs)
+       return wrapper
+
+
+ def bar():
+     print (&apos;i am bar&apos;)
+
+ bar=use_logging(bar)
+ bar()
+</code></pre><p>函数use_logging就是装饰器，它把执行真正业务方法的func包裹在函数里面，看起来bar被use_logging装饰了，在这个例子中，函数进入和退出是成为一个横切面，这种编程模式称为面向切面的编程。</p>
+<p>@符号称为装饰器的语法糖，在定义函数的时候使用，避免再一次赋值操作。<br>比如真正的函数调用bar1要使用装饰器use_logging可以写成下面的方式</p>
+<pre><code>@use_logging
+def bar1():
+    print &apos;i am bar1&apos;
+</code></pre><p>这样先执行装饰器，然后是真实的逻辑代码。<br>如上面我们就省去了定义bar=use_logging(bar1),如果其它的函数也要调用装饰器直接@use_logging就可以。不用修改函数或者增加新的封装。这样我们就提高了程序的可重复利用性，增加了程序的可读性。</p>
+<p>装饰器在python中使用方便都要归因于python的函数能像普通的对象一样能作为参数传递给其他函数，可以被赋值给其他变量，可以作为返回值，可以定义在一个函数内。</p>
+<h3 id="带参数的装饰器"><a href="#带参数的装饰器" class="headerlink" title="带参数的装饰器"></a>带参数的装饰器</h3><blockquote>
+<p>  装饰器还有更大的灵活性，例如带参数的装饰器：在上面的装饰器中 ，比如@use_logging该装饰器唯一的参数就是执行业务的函数。装饰器的语法允许我们在调用时提供其他参数比如@decorator(a).这样为装饰器的编写和使用提供了更大的灵活性。</p>
+</blockquote>
+<pre><code>def use_logging(level):
+    def decorator(func):
+        def warpper(*args,**kargs):
+            if level==&apos;warn&apos;:
+                logging.warn(&apos;%sis running&apos;%func.__name__)
+            return func(*args)
+        return warpper
+    return decorator
+
+@use_logging(level=&apos;warn&apos;)
+def foo(name=&apos;fool&apos;):
+    print &apos;i am fool&apos;
+foo()
+上面的use_logging是一个带有参数的装饰器实际上是对原有装饰器的一个函数的封装，并返回一个装饰器，我们可以理解为含有一个参数的闭包当我们使用@use_logging(level=&apos;warn&apos;)调用的时候，python能够发现这一层的封装，并把参数传递到装饰器的参数中。
+</code></pre><h3 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h3><blockquote>
+<p>再来看看类装饰器，相比函数装饰器，类装饰器具有灵活度大、高内聚、封装性等优点。使用类装饰器还可以依靠类内部的__call__方法，当使用 @ 形式将装饰器附加到函数上时，就会调用此方法。</p>
+</blockquote>
+<pre><code>class Foo(object):
+&apos;&apos;&apos; class decorator&apos;&apos;&apos;
+
+def __init__(self, func):
+    self._func = func
+
+def __call__(self):
+    print &apos;class decorator running&apos;
+    self._func()
+    print &apos;class decorator ending
+
+@Foo
+  def bar():
+     print &apos;bar&apos;
+bar()
+</code></pre><h3 id="functools-wraps"><a href="#functools-wraps" class="headerlink" title="functools.wraps"></a>functools.wraps</h3><blockquote>
+<p>使用装饰器极大的复用代码，但是他有一个缺点就是函数的原信息不见了比如函数的docstring <strong>name</strong> 参数列表 看看下面的例子</p>
+</blockquote>
+<pre><code>def logged(func):
+    def with_logged(*args,**kargs):
+        print func.__name__+&quot;was called&quot;
+        return func(*args,**kargs)
+    return with_logged
+
+
+
+ @logged
+ def f(x):
+     return x+x*x
+
+ 该函数完全等价于
+
+ def f(x):
+     return x+x*x
+ f=logged(f)
+
+ print f.__name__  # with_logged
+ print f.__doc__   # None
+
+ #这个问题比较严重，好在我们有functools.wraps,wraps本身也是一个装饰器，它能把原函数的元信息，拷贝到装饰函数中，这使得装饰器函数也和原函数有着一样的原信息。
+
+
+   from functools import wraps
+   def loggds(func):
+      @wraps(func)
+      def with_loggd(*args, **kwargs):
+          print func.__name__ + &apos;was called&apos;
+          return func(*args, **kwargs)
+      return with_loggd
+
+
+   def f(x):
+    &apos;do some thing&apos;
+     return x + x * x
+
+    f2 = loggds(f)
+    print f2.__name__  # f
+    print f2.__doc__   # do some thing
+    保持了原有信息。
+</code></pre><h3 id="内置装饰器"><a href="#内置装饰器" class="headerlink" title="内置装饰器"></a>内置装饰器</h3><blockquote>
+<p>@staticmathod、@classmethod、@property<br>  @a<br>  @b<br>  @c<br>  def f ():<br>  装饰器的顺序等效于 f = a(b(c(f)))</p>
+</blockquote>
+<p> [参考链接][<a href="http://book42qu.readthedocs.io/en/latest/python/python-closures-and-decorators.html" target="_blank" rel="external">http://book42qu.readthedocs.io/en/latest/python/python-closures-and-decorators.html</a>]</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a></li></ul>
+
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: '',
+  alipayImage: ''
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/22/process/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">process for python</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python装饰器"><span class="nav-number">1.</span> <span class="nav-text">python装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器的本质"><span class="nav-number">1.2.</span> <span class="nav-text">装饰器的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器的使用场景"><span class="nav-number">1.3.</span> <span class="nav-text">装饰器的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器的作用"><span class="nav-number">1.4.</span> <span class="nav-text">装饰器的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带参数的装饰器"><span class="nav-number">1.5.</span> <span class="nav-text">带参数的装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类装饰器"><span class="nav-number">1.6.</span> <span class="nav-text">类装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#functools-wraps"><span class="nav-number">1.7.</span> <span class="nav-text">functools.wraps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置装饰器"><span class="nav-number">1.8.</span> <span class="nav-text">内置装饰器</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 记录生活点滴 All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
