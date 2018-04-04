@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/05/readme/</loc>
+    <lastmod>2018-04-04T08:57:07.178Z</lastmod>
+    <data>
+        <display>
+        <title>readme</title>
+        <pubTime>2018-01-05T14:18:21.000Z</pubTime>
+        
+        <tag>工具开发需求</tag>
+         
+         
+           
+             
+              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/10/29/blue/</loc>
     <lastmod>2018-04-04T08:54:15.972Z</lastmod>
     <data>
@@ -37,26 +57,6 @@
            
              
               <breadCrumb title="RedHat" url="http://yoursite.com/categories/RedHat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/05/readme/</loc>
-    <lastmod>2018-04-04T08:50:59.944Z</lastmod>
-    <data>
-        <display>
-        <title>readme</title>
-        <pubTime>2018-01-05T14:18:21.000Z</pubTime>
-        
-        <tag>工具开发需求</tag>
-         
-         
-           
-             
-              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
           
         </display>
     </data>
