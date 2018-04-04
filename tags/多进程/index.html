@@ -161,38 +161,142 @@ var themeMenus = {};
         
           <section id="main">
   
-  
-  
+    <article id="post-process"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/22/process/" class="archive-article-date">
-		  <time datetime="2018-01-22T06:23:43.000Z" itemprop="datePublished">Jan 22, 2018</time>
-	  </a>
-      
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/process/">process for python</a>
+      <a class="article-title" href="/2018/01/22/process/">process for python</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/01/22/process/" class="article-date">
+	  <time datetime="2018-01-22T06:23:43.000Z" itemprop="datePublished">January 22, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="多进程—base"><a href="#多进程—base" class="headerlink" title="多进程—base"></a>多进程—base</h1><p>python中的多线程其实并不是真正的多线程，如果想要充分地使用多核CPU的资源，在python中大部分情况需要使用多进程。Python提供了非常好用的多进程包multiprocessing，只需要定义一个函数，Python会完成其他所有事情。借助这个包，可以轻松完成从单进程到并发执行的转换。multiprocessing支持子进程、通信和共享数据、执行不同形式的同步，提供了Process、Queue、Pipe、Lock等组件。</p>
+<p>1.请看下面的代码实例：</p>
+<pre><code>import sys
+reload(sys)
+sys.setdefaultencoding(&quot;utf-8&quot;)
+from multiprocessing import Process
+import os
+import time
+def task(name):
+    print &quot;child process name is %s with process_id is %s start&quot;%(name,os.getpid())
+    time.sleep(2)
+    print &quot;child process name is %s with process_id is %s end&quot;%(name,os.getpid())
+
+if __name__ == &apos;__main__&apos;:
+    print &apos;Parent process_id is %s&apos;%os.getpid()
+    # start child process
+    p=Process(target=task,args=(&apos;mino&apos;,))
+    print &quot;process start&quot;
+    p.start()
+    p.join() # main process wait childprocess
+    print &quot;process end&quot;
+</code></pre><p>其实上面的代码要做任务是获取进程的pid然后休眠2秒再打印出进程的pid.主方法中除了有主进程之外，还new了一个新的进程。让新的进程去处理任务。主进程首先获取到主进程的pid然后再执行子进程。p.join()方法是主进程必须等待子进程执行完毕，才能继续执行下面的代码。</p>
+<p>2.接着看下面的实例，创建进程池的逻辑。</p>
+<pre><code># -*-coding:utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding(&quot;utf-8&quot;)
+import os,time
+from multiprocessing import Pool
+
+
+def task(name,time_sleep):
+    print &quot;child process name is %s with p_id is %s start&quot;%(name,os.getpid())
+    time.sleep(time_sleep)
+    print &quot;child process name is %s with p_id is %s end&quot;%(name,os.getpid())
+
+if __name__ == &apos;__main__&apos;:
+    print &quot;parent_processId is %s&quot;%os.getpid()
+    # create process pool
+    p=Pool(4) # 2 6.2  3 5.3  4 4.2 
+    for i in xrange(5):
+        # apply_task for pool
+        p.apply_async(task,args=(&quot;mino&quot;+str(i),i))
+    print &quot;child process are running&quot;
+    p.close()
+    p.join()
+    print &quot;all process end&quot;
+</code></pre><p>利用进程池可以一次性创建多个进程。p=Pool()是创建进程池的方法。<br>p.apply_async()是给每个进程附件异步执行的方法。这里是创建4个进程的容器，每个子进程执行的任务都是获取打印进程的pid然后休眠几秒再打印子进程的pid.主进程等待子进程都执行完毕之后，再去执行后面的逻辑。</p>
+<p>3.接着请看下面的逻辑创建读写队列和进程锁</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="--coding:utf-8 --"></a>-<em>-coding:utf-8 -</em>-</h1><pre><code>import sys
+reload(sys)
+sys.setdefaultencoding(&apos;utf-8&apos;)
+from multiprocessing import Process,Queue,Lock
+import time,os,random
+
+
+def write(q,lock,name):
+    print &apos;child process %s start&apos;%name
+    #acquire lock
+    lock.acquire()
+    for data in [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;]:
+        print &apos;put value %s to queen&apos;%data
+        q.put(data)
+        time.sleep(random.random())
+    #release lock
+    lock.release()
+    print &apos;child process %s end&apos;%name
+
+def read(q,lock,name):
+    print &quot;read process %s start&quot;%name
+    while True:
+        value=q.get()
+        #print value
+        print &apos;get vlue %s from queue&apos;%value
+
+    print &quot;read process %s end&quot;%name
+
+if __name__ == &apos;__main__&apos;:
+    lock=Lock()
+    q=Queue()
+    pwiter=Process(target=write,args=(q,lock,&apos;write&apos;))
+    pread=Process(target=read,args=(q,lock,&apos;read&apos;))
+    pwiter.start()
+    pread.start()
+    pwiter.join()
+    pread.terminate()
+    print &quot;main process finish&quot;
+</code></pre><p>主进程首先创建全局变量lock,和queue,然后创建写和读的进程。当子进程再写入内容填，必须加锁，保证同一时间只能有一个进程操作写的动作。将数据放入队列之后.释放锁。而负责读的进程从队列中读取数据，读进程是不需要加锁的，直接再队列中取数据。读写进程都执行完之后（读进程不会终止，需要调用pread.tearminate()才能终止），接着执行下面的逻辑。</p>
+<h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h4><ul>
+<li><a href="https://docs.python.org/2/library/subprocess.html" target="_blank" rel="external">subprocess官方模块</a></li>
+<li><a href="http://python.jobbole.com/86822/" target="_blank" rel="external">python单进程与多进程效率的对比</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多进程/">多进程</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+<!-- Table of Contents -->
+
   
 
 

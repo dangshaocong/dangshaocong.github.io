@@ -161,38 +161,95 @@ var themeMenus = {};
         
           <section id="main">
   
-  
-  
+    <article id="post-pyexcept"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2017/11/11/pyexcept/" class="archive-article-date">
-		  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">Nov 11, 2017</time>
-	  </a>
-      
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2017/11/11/pyexcept/">pyexcept</a>
+      <a class="article-title" href="/2017/11/11/pyexcept/">pyexcept</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/11/11/pyexcept/" class="article-date">
+	  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">November 11, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为了增强程序的健壮性，管理运行时预见的错误—–异常"><a href="#为了增强程序的健壮性，管理运行时预见的错误—–异常" class="headerlink" title="为了增强程序的健壮性，管理运行时预见的错误—–异常"></a>为了增强程序的健壮性，管理运行时预见的错误—–异常</h2><pre><code>1. 错误是程序不能执行 一般包括语法错误和逻辑错误
+2. 异常是程序出现了错误，而在正常控制流以外采取的措施
+- 异常处理的过程一般有两步，引发异常和处理异常
+- 处理异常 一般是直接pass或者执行一场之后的逻辑
+</code></pre><h2 id="Python常见的异常"><a href="#Python常见的异常" class="headerlink" title="Python常见的异常"></a>Python常见的异常</h2><ul>
+<li>NameError 当调用一个没有定义的变量时解释器出现的异常<pre><code>&gt;&gt;&gt; a
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &apos;a&apos; is not defined
+</code></pre></li>
+<li>ZeroDivisionError 除数为0的error</li>
+<li>SyntaxError Python解释器语法错误</li>
+<li>indexError 序列的索引超标</li>
+<li>keyError 字典的键问题，字典中不存在键</li>
+<li>IOError 文件的异常，没有文件或者打开异常</li>
+<li>AttributeError 属性异常对象中没有属性</li>
+</ul>
+<p>##异常的处理</p>
+<ol>
+<li>try-except 如果try通过不执行except里面的逻辑</li>
+<li>try-finally 不管try有没有通过都要执行finally里面的代码</li>
+<li>try-except-finally</li>
+<li>try-except-else-finally</li>
+</ol>
+<h2 id="例子-返回浮点型"><a href="#例子-返回浮点型" class="headerlink" title="例子 返回浮点型"></a>例子 返回浮点型</h2><pre><code>def safe_float(obj):
+  try:
+     return float(obj)
+  except ValueError, e:
+     return &apos;ValueError&apos;, e
+  except TypeError, e:
+     return &apos;TypeError&apos;, e
+
+ F:\Python2\python.exe F:/pycode/Error/handle_error.py
+(&apos;TypeError&apos;, TypeError(&apos;float() argument must be a string or a number&apos;,))
+(&apos;ValueError&apos;, ValueError(&apos;could not convert string to float: xxxx&apos;,))
+</code></pre><h2 id="捕获多处异常和异常参数"><a href="#捕获多处异常和异常参数" class="headerlink" title="捕获多处异常和异常参数"></a>捕获多处异常和异常参数</h2><pre><code>def safe_float1(obj):
+ try:
+     return float(obj)
+ except (TypeError, ValueError), dig:
+     print type(dig)
+     print dig
+     return str(dig)
+
+&lt;type &apos;exceptions.TypeError&apos;&gt;
+ float() argument must be a string or a number
+ float() argument must be a string or a number
+</code></pre>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异常处理/">异常处理</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+<!-- Table of Contents -->
+
   
 
 

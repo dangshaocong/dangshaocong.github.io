@@ -161,38 +161,62 @@ var themeMenus = {};
         
           <section id="main">
   
-  
-  
+    <article id="post-centos1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/08/centos1/" class="archive-article-date">
-		  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">Jan 08, 2018</time>
-	  </a>
-      
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/centos1/">centos</a>
+      <a class="article-title" href="/2018/01/08/centos1/">centos</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/01/08/centos1/" class="article-date">
+	  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">January 8, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="centos上使用yum-命令时有下面的错误信息"><a href="#centos上使用yum-命令时有下面的错误信息" class="headerlink" title="centos上使用yum 命令时有下面的错误信息"></a>centos上使用yum 命令时有下面的错误信息</h3><p>another app is currently holding the yum lock;waiting for it to exit </p>
+<p><img src="/2018/01/08/centos1/error.png" alt="错误截图"></p>
+<p>解决办法：可以强制关闭yum 进程<br>rm -f /var/run/yum.pid</p>
+<p>查看用yum安装的包<br>yum list installed </p>
+<h3 id="centos上检查某软件包是否已经安装"><a href="#centos上检查某软件包是否已经安装" class="headerlink" title="centos上检查某软件包是否已经安装"></a>centos上检查某软件包是否已经安装</h3><p>1、rpm(RedHat Package Manager)包安装的，可以用rpm -qa看到，如果要查找某软件包是否安装，用 rpm -qa | grep “软件或者包的名字”。</p>
+<p>2、以deb包安装的，可以用dpkg -l能看到。如果是查找指定软件包，用dpkg -l | grep “软件或者包的名字”；</p>
+<p>3、yum方法安装的，可以用yum list installed查找，如果是查找指定包，命令后加 | grep “软件名或者包名”；</p>
+<p>4、如果是以源码包自己编译安装的，例如.tar.gz或者tar.bz2形式的，这个只能看可执行文件是否存在了，上面两种方法都看不到这种源码形式安装的包。如果是以root用户安装的，可执行程序通常都在/sbin:/usr/bin目录下。</p>
+<p> 附加：</p>
+<ul>
+<li><a href="https://pkgs.org/" target="_blank" rel="external">Linux rpm包集合</a></li>
+<li><a href="http://www.cnblogs.com/xiaochaohuashengmi/archive/2011/10/08/2203153.html" target="_blank" rel="external">rpm使用</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-yum/">centos yum</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+<!-- Table of Contents -->
+
   
 
 
