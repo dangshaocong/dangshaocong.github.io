@@ -4,6 +4,106 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/10/29/blue/</loc>
+    <lastmod>2018-04-04T08:54:15.972Z</lastmod>
+    <data>
+        <display>
+        <title>blue</title>
+        <pubTime>2017-10-29T15:06:44.000Z</pubTime>
+        
+        <tag>引入图片</tag>
+         
+         
+           
+             
+              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/08/centos1/</loc>
+    <lastmod>2018-04-04T08:53:08.346Z</lastmod>
+    <data>
+        <display>
+        <title>centos</title>
+        <pubTime>2018-01-08T08:37:05.000Z</pubTime>
+        
+        <tag>centos yum</tag>
+         
+         
+           
+             
+              <breadCrumb title="RedHat" url="http://yoursite.com/categories/RedHat/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/05/readme/</loc>
+    <lastmod>2018-04-04T08:50:59.944Z</lastmod>
+    <data>
+        <display>
+        <title>readme</title>
+        <pubTime>2018-01-05T14:18:21.000Z</pubTime>
+        
+        <tag>工具开发需求</tag>
+         
+         
+           
+             
+              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/31/Timer/</loc>
+    <lastmod>2018-04-04T08:50:25.145Z</lastmod>
+    <data>
+        <display>
+        <title>python启动定时任务</title>
+        <pubTime>2017-10-31T11:36:30.000Z</pubTime>
+        
+        <tag>python启动定时任务</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/22/process/</loc>
+    <lastmod>2018-04-04T08:50:08.589Z</lastmod>
+    <data>
+        <display>
+        <title>process for python</title>
+        <pubTime>2018-01-22T06:23:43.000Z</pubTime>
+        
+        <tag>多进程</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
     <lastmod>2018-04-04T08:47:35.870Z</lastmod>
     <data>
@@ -43,91 +143,8 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2018/01/22/process/</loc>
-    <lastmod>2018-02-01T11:12:22.301Z</lastmod>
-    <data>
-        <display>
-        <title>process for python</title>
-        <pubTime>2018-01-22T06:23:43.000Z</pubTime>
-        
-        <tag>多进程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
     
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/13/index/</loc>
-    <lastmod>2018-01-13T09:25:58.572Z</lastmod>
-    <data>
-        <display>
-        <title>md操作</title>
-        <pubTime>2018-01-13T09:14:56.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/29/blue/</loc>
-    <lastmod>2018-01-08T10:24:18.568Z</lastmod>
-    <data>
-        <display>
-        <title>blue</title>
-        <pubTime>2017-10-29T15:06:44.000Z</pubTime>
-        
-        <tag>引入图片</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/08/centos1/</loc>
-    <lastmod>2018-01-08T09:25:06.197Z</lastmod>
-    <data>
-        <display>
-        <title>centos</title>
-        <pubTime>2018-01-08T08:37:05.000Z</pubTime>
-        
-        <tag>centos yum</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/05/readme/</loc>
-    <lastmod>2018-01-08T08:06:01.864Z</lastmod>
-    <data>
-        <display>
-        <title>readme</title>
-        <pubTime>2018-01-05T14:18:21.000Z</pubTime>
-        
-        <tag>工具开发需求</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/2017/10/29/hello/</loc>
@@ -138,23 +155,6 @@
         <pubTime>2017-10-29T14:40:00.000Z</pubTime>
         
         <tag>知名网站</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/31/Timer/</loc>
-    <lastmod>2018-01-08T06:31:32.560Z</lastmod>
-    <data>
-        <display>
-        <title>python启动定时任务</title>
-        <pubTime>2017-10-31T11:36:30.000Z</pubTime>
-        
-        <tag>python启动定时任务</tag>
          
          
            

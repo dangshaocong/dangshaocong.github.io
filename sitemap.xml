@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/10/29/blue/</loc>
+    
+    <lastmod>2018-04-04T08:54:15.972Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/01/08/centos1/</loc>
+    
+    <lastmod>2018-04-04T08:53:08.346Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/01/05/readme/</loc>
+    
+    <lastmod>2018-04-04T08:50:59.944Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/31/Timer/</loc>
+    
+    <lastmod>2018-04-04T08:50:25.145Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/01/22/process/</loc>
+    
+    <lastmod>2018-04-04T08:50:08.589Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
     
     <lastmod>2018-04-04T08:47:35.870Z</lastmod>
@@ -12,13 +47,6 @@
     <loc>http://yoursite.com/2018/04/03/Decorator/</loc>
     
     <lastmod>2018-04-04T08:19:58.726Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/01/22/process/</loc>
-    
-    <lastmod>2018-02-01T11:12:22.301Z</lastmod>
     
   </url>
   
@@ -37,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/01/13/index/</loc>
-    
-    <lastmod>2018-01-13T09:25:58.572Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-01-09T13:09:34.883Z</lastmod>
@@ -51,37 +72,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/29/blue/</loc>
-    
-    <lastmod>2018-01-08T10:24:18.568Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/01/08/centos1/</loc>
-    
-    <lastmod>2018-01-08T09:25:06.197Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/01/05/readme/</loc>
-    
-    <lastmod>2018-01-08T08:06:01.864Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/10/29/hello/</loc>
     
     <lastmod>2018-01-08T06:31:32.568Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/31/Timer/</loc>
-    
-    <lastmod>2018-01-08T06:31:32.560Z</lastmod>
     
   </url>
   
