@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
+    <lastmod>2018-04-04T08:47:35.870Z</lastmod>
+    <data>
+        <display>
+        <title>pyexcept</title>
+        <pubTime>2017-11-11T14:18:21.000Z</pubTime>
+        
+        <tag>异常处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/03/Decorator/</loc>
     <lastmod>2018-04-04T08:19:58.726Z</lastmod>
     <data>
@@ -84,23 +104,6 @@
         <pubTime>2018-01-08T08:37:05.000Z</pubTime>
         
         <tag>centos yum</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
-    <lastmod>2018-01-08T08:06:07.944Z</lastmod>
-    <data>
-        <display>
-        <title>pyexcept</title>
-        <pubTime>2017-11-11T14:18:21.000Z</pubTime>
-        
-        <tag>异常处理</tag>
          
          
            
