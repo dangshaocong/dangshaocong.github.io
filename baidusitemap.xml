@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/04/03/Decorator/</loc>
-    <lastmod>2018-04-03T14:18:48.491Z</lastmod>
+    <lastmod>2018-04-04T08:17:29.229Z</lastmod>
     <data>
         <display>
         <title>装饰器</title>
@@ -15,6 +15,9 @@
          
          
            
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
         </display>
     </data>
     </url>
