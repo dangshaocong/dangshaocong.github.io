@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>archiv: 2018/4 | 记录生活点滴</title>
+  <title>tag: 文件操作-shutil高级模块 | 记录生活点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="记录生活点滴">
-<meta property="og:url" content="http://yoursite.com/archives/2018/04/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/文件操作-shutil高级模块/index.html">
 <meta property="og:site_name" content="记录生活点滴">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -164,69 +164,107 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 10 posts in total till now.</span></blockquote>
-
-
-
-
-	<!-- 分页显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/04/27/file/" class="archive-article-date">
-		  <time datetime="2018-04-27T15:29:25.503Z" itemprop="datePublished">Apr 27, 2018</time>
-	  </a>
-      
+  
+    <article id="post-file"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/04/27/file/">process for python</a>
+      <a class="article-title" href="/2018/04/27/file/">process for python</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/04/03/Decorator/" class="archive-article-date">
-		  <time datetime="2018-04-03T14:01:00.000Z" itemprop="datePublished">Apr 03, 2018</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/04/03/Decorator/">装饰器</a>
-    </h1>
-  
+	Posted on <a href="/2018/04/27/file/" class="article-date">
+	  <time datetime="2018-04-27T15:29:25.503Z" itemprop="datePublished">April 27, 2018</time>
+	</a>
 
-    </header>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="高级文件操作模块-shutil"><a href="#高级文件操作模块-shutil" class="headerlink" title="高级文件操作模块-shutil"></a>高级文件操作模块-shutil</h1><hr>
+<h2 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h2><blockquote>
+<p>os模块，已经提供了，对文件的基本的操作，比如对，文件的新建，移动，删除。绝对路径，父目录，文件夹。这些只是最基本的功能，但是并没有提供文件内容复制，压缩，打包，解压。shutil则是对os模块的扩展</p>
+</blockquote>
+<h2 id="shutil的基本方法介绍"><a href="#shutil的基本方法介绍" class="headerlink" title="shutil的基本方法介绍"></a>shutil的基本方法介绍</h2><p>1.copy文件内容，到另外一个文件，可以指定拷贝文件的大小。</p>
+<pre><code>import shutil
+shutil.copyfileobj(fscrc,fdst,length)
+</code></pre><blockquote>
+<p>其中fscrc,fdst均为文件对象，需要打开文件，才能进行复制，最后的length参数是可选的，指定复制文件内容的大小。</p>
+</blockquote>
+<p>2.copy文件内容，上面的复制很麻烦，还需要自己手动打开文件。open函数打开，接下来看下面的方法。</p>
+<pre><code>import shutil
+shutil.copyfile(src,dst) src dst 均为文件名
+</code></pre><blockquote>
+<p>这个dst文件不存在的话，就新建一个文件然后将src的内容写进去。如果存在直接覆盖dst文件的内容</p>
+</blockquote>
+<p>3.copy文件权限，仅仅拷贝src的文件权限到dst</p>
+<pre><code>import shutil
+shutil.copymod(src,dst) src,dst只能为文件
+</code></pre><blockquote>
+<p>将文件src的权限直接copy到dst文件，如果dst文件不存在，就会报错。 让dst和src文件拥有相同的权限。</p>
+</blockquote>
+<pre><code>Traceback (most recent call last):
+  File &quot;C:\Users\admin\Desktop\resource\baseCode\fileCore\       handler.py&quot;, line 7, in &lt;module&gt;
+  shutil.copymode(&apos;read1.txt&apos;,&apos;read4.txt&apos;)
+  File &quot;D:\python2.7\lib\shutil.py&quot;, line 91, in copymode
+  os.chmod(dst, mode)
+  WindowsError: [Error 2] : &apos;read4.txt&apos;
+</code></pre><p>4.copy文件的所有信息，状态信息。包括权限，组，用户，信息。</p>
+<pre><code>import shutil
+shutil.copystat(src,dst)  #包括文件的mtime ctime
+</code></pre><p>5.copy 将文件复制到文件夹中</p>
+<pre><code>shutil.copy(file,dir) 
+#该函数的返回值是复制成功后的字符串格式的文件路径
+</code></pre><blockquote>
+<p>将file完全移动到dir目录中，只能复制单个文件到指定的路径中。如果后面是文件名，那么dir将会被当成复制后的文件名称。</p>
+</blockquote>
+<p>6.递归复制文件夹中的内容到指定的目录</p>
+<pre><code>shutil.copytree(src,dir)
+#将src里面的文件夹里的所有的文件及其子目录的内容递归复制到     目标目录。
+</code></pre><blockquote>
+<p>注意，如果 destination 文件夹已经存在，该操作并返回一个 FileExistsError 错误，提示文件已存在。即表示，如果执行了该函数，程序会自动创建一个新文件夹（destination参数）并将 source 文件夹中的内容复制过去</p>
+</blockquote>
+<p>7.删除文件夹里面的所有内容</p>
+<pre><code>shutil.rmtree(path) #删除path目录下的所有东西。
+</code></pre><blockquote>
+<p>上面的删除要特别注意可以用字符串的endwith()属性来判断。</p>
+</blockquote>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>对于文件和文件夹的操作，最好是os和shutil来结合使用，会达到最佳的效果奥。。。。加油！！！！！<br>也可以参阅官方文档</p>
+<ul>
+<li><a href="https://docs.python.org/2/library/shutil.html" target="_blank" rel="external">shutil-doc</a></li>
+<li><a href="https://docs.python.org/2/library/os.html" target="_blank" rel="external">os-doc</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-	
-	
-		</div></section>
-	
 
-	<!-- 页数指示器 -->
-	
+<!-- Table of Contents -->
 
+  
 
 
 </section>

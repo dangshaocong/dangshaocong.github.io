@@ -5,14 +5,39 @@
     
   <url>
     <loc>http://yoursite.com/2018/04/27/file/</loc>
-    <lastmod>2018-04-27T15:29:25.503Z</lastmod>
+    <lastmod>2018-04-27T15:35:35.085Z</lastmod>
     <data>
         <display>
-        <title></title>
+        <title>process for python</title>
         <pubTime>2018-04-27T15:29:25.503Z</pubTime>
         
+        <tag>文件操作-shutil高级模块</tag>
+         
          
            
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/29/blue/</loc>
+    <lastmod>2018-04-27T15:35:28.343Z</lastmod>
+    <data>
+        <display>
+        <title>blue</title>
+        <pubTime>2017-10-29T15:06:44.000Z</pubTime>
+        
+        <tag>引入图片</tag>
+         
+         
+           
+             
+              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
+          
         </display>
     </data>
     </url>
@@ -45,26 +70,6 @@
         <pubTime>2018-01-05T14:18:21.000Z</pubTime>
         
         <tag>工具开发需求</tag>
-         
-         
-           
-             
-              <breadCrumb title="tool" url="http://yoursite.com/categories/tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/29/blue/</loc>
-    <lastmod>2018-04-04T08:54:15.972Z</lastmod>
-    <data>
-        <display>
-        <title>blue</title>
-        <pubTime>2017-10-29T15:06:44.000Z</pubTime>
-        
-        <tag>引入图片</tag>
          
          
            
