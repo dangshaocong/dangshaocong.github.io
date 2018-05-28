@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/05/28/short/</loc>
+    <lastmod>2018-05-28T06:27:34.437Z</lastmod>
+    <data>
+        <display>
+        <title>git,scp,rsync</title>
+        <pubTime>2018-05-28T02:32:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/27/file/</loc>
     <lastmod>2018-04-27T15:35:35.085Z</lastmod>
     <data>

@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>tag: 工具开发需求 | 记录生活点滴</title>
+  <title>archiv: 2018 | 记录生活点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="记录生活点滴">
-<meta property="og:url" content="http://yoursite.com/tags/工具开发需求/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2018/page/4/index.html">
 <meta property="og:site_name" content="记录生活点滴">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -164,67 +164,54 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  
-    <article id="post-readme"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
+  <div class="archives-tags-wrap"><blockquote><span>There are 11 posts in total till now.</span></blockquote>
+
+
+
+
+	<!-- 分页显示 -->
+	
+	
+		
+		
+		  
+		  
+		  <section class="archives-wrap">
+		    <div class="archive-year-wrap">
+		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
+		    </div>
+		    <div class="archives">
+		
+		<article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+
+      <a href="/2018/01/05/readme/" class="archive-article-date">
+		  <time datetime="2018-01-05T14:18:21.000Z" itemprop="datePublished">Jan 05, 2018</time>
+	  </a>
+      
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/01/05/readme/">readme</a>
+      <a class="archive-article-title" href="/2018/01/05/readme/">readme</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2018/01/05/readme/" class="article-date">
-	  <time datetime="2018-01-05T14:18:21.000Z" itemprop="datePublished">January 5, 2018</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一.虚拟机<br>1.检查操作系统CentOS 7.2 64位或 RHEL7.2 64位以上，选择标准化安装（不能用最小化安装）最小化安装时安装缺失的包（base\web server\kexec-tools）</p>
-<p>2.检查yum源，如果没有进行配置</p>
-<p>3.检查所有机器的root账号密码需要统一，建立sudo权限的非root账号密码</p>
-<p>4.检查所有机器关闭防火墙 重启不失效</p>
-<p>5.检查所有机器关闭selinux 并且保证重启后不失效</p>
-<p>6.检查所有机器网卡名需要保持统一</p>
-<p>7.检查所有机器的ipfowad4处于开启状态并且保证重启后不失效</p>
-<p>8.检查部署机上是否上传了镜像，如果上传了镜像计算比对md5</p>
-<p>9.所有机器配置有规律的主机名 如mw1-mw8</p>
-<p>二.物理机<br>虚拟机需要下面的额外检查： 1.检查是否配置好一个独立VLAN（检查这个VLAN里面除了网关，其它IP是否被占用）；检查这个VLAN要和物理机不在同一个VLAN，要跟里外物理机都能连通。</p>
-<p>2.检查查看交换机配置，与服务器接口配置需为trunk口且允许物理机vlan和docker段vlan通过</p>
-<p>3.物理服务器的网卡配置tag模式 具体详见下面说明 网络连通性的保证，如没有打tag，网络不通 Center OS 7.2 网卡配置VLAN TAG 3.1、确认内核是否已经载入802.1q模组: lsmod|grep 8021q，如果没有使用一下命令将模组载入内核：modprobe -a 8021q 3.2、vi打开/etc/sysconfig/network-scripts/ifcfg-bondX删除对应bond的IP和dns配置信息，保存 3.3、创建vlan网卡配置文件，(例如创建服务器网段vlan1199)：cp一个原bond网卡配置命名为bond0.1199，vi修改内容如下， 增加一行 VLAN=yes 修改DEVICE=bond0.1199 配置IP、掩码、网关 完成后重启网络 service network restart 查看vlan配置 cat /proc/net/vlan/config 有对应的dev name和vlanid即可 ping网络是否通，ping自身网关是否通，ping docker段vlan网关是否通，ping NTP服务器是否通。</p>
-<p>4.检查物理机的磁盘不小于2.4TB，数据盘采用RAD10模式的磁盘阵列</p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/tool/">tool</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具开发需求/">工具开发需求</a></li></ul>
-
-      
-            
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
+	
+	
+		</div></section>
+	
 
-<!-- Table of Contents -->
+	<!-- 页数指示器 -->
+	
+	  <nav id="page-nav">
+	    
+	    <a class="extend prev" rel="prev" href="/archives/2018/page/3/">zurück</a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><span class="page-number current">4</span>
+	  </nav>
+	
 
-  
 
 
 </section>

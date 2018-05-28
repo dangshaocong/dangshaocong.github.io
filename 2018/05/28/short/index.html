@@ -13,22 +13,25 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>process | 记录生活点滴</title>
+  <title>git,scp,rsync | 记录生活点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="git" />
   
   
   
-  <meta name="description" content="人生苦短">
-<meta property="og:type" content="website">
-<meta property="og:title" content="process">
-<meta property="og:url" content="http://yoursite.com/process/index.html">
+  
+  <meta name="description" content="tools使用">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git,scp,rsync">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/short/index.html">
 <meta property="og:site_name" content="记录生活点滴">
-<meta property="og:description" content="人生苦短">
-<meta property="og:updated_time" content="2018-01-22T06:23:43.967Z">
+<meta property="og:description" content="tools使用">
+<meta property="og:updated_time" content="2018-05-28T06:27:34.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="process">
-<meta name="twitter:description" content="人生苦短">
+<meta name="twitter:title" content="git,scp,rsync">
+<meta name="twitter:description" content="tools使用">
   
     <link rel="alternate" href="/atom.xml" title="记录生活点滴" type="application/atom+xml">
   
@@ -86,7 +89,7 @@ var themeMenus = {};
 </script>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   <header id="allheader" class="site-header" role="banner">
@@ -164,7 +167,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-short" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -172,7 +175,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      process
+      git,scp,rsync
     </h1>
   
 
@@ -180,8 +183,8 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/process/index.html" class="article-date">
-	  <time datetime="2018-01-22T06:23:43.000Z" itemprop="datePublished">January 22, 2018</time>
+	Posted on <a href="/2018/05/28/short/" class="article-date">
+	  <time datetime="2018-05-28T02:32:00.000Z" itemprop="datePublished">May 28, 2018</time>
 	</a>
 
       
@@ -192,12 +195,28 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="常用的操作-git-scp-rsync"><a href="#常用的操作-git-scp-rsync" class="headerlink" title="常用的操作(git,scp,rsync)"></a>常用的操作(git,scp,rsync)</h1><hr>
+<h2 id="查看系统的版本"><a href="#查看系统的版本" class="headerlink" title="查看系统的版本"></a>查看系统的版本</h2><p>   win+R dixdiag</p>
+<h2 id="查看注册表"><a href="#查看注册表" class="headerlink" title="查看注册表"></a>查看注册表</h2><p>   regedit</p>
+<h2 id="查看远程服务器"><a href="#查看远程服务器" class="headerlink" title="查看远程服务器"></a>查看远程服务器</h2><p>scp -P22 10.100.0.21:/tmp  /tmp  获取远程的文件到本地<br>scp -P22 -r /tmp  10.100.0.21:/tmp 将本地的内容推到远程</p>
+<p>rsync<br>其中带有/查看目录里面的文件，不带/查看目录本身<br>rsync 10.100.0.21:/tmp/ 列出远程服务器的文件内容<br>rsync -a 10.100.0.21:/tmp/ 列出远程的文件夹 -a将会显示出所有的文件结构<br>rsync /tmp /etc/tmp 本地同步</p>
+<p>rsync -a /etc /tmp  这个命令会在/tmp目录创建etc目录<br>rsync -a /etc/ /tmp 这个命令不会在/tmp 目录创建etc目录。</p>
+<h2 id="git-推送本地分支到远程"><a href="#git-推送本地分支到远程" class="headerlink" title="git 推送本地分支到远程"></a>git 推送本地分支到远程</h2><p>git push origin feature:feature</p>
+<p>查看本地分支 git branch<br>查看远程分支 git branch -r</p>
+<p>删除远程分支git push origin –delete <branchname><br>删除本地分支 git branch -d <branchname></branchname></branchname></p>
+<p>##创建并且切换本地分支<br>git checkout -b 分支名  创建切换本地分支<br>git branch+git checkout</p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/git/">git</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
       
         <div id="donation_div"></div>
 
@@ -242,223 +261,30 @@ var a = new Donate({
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/27/file/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">process for python</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 <!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的操作-git-scp-rsync"><span class="nav-number">1.</span> <span class="nav-text">常用的操作(git,scp,rsync)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看系统的版本"><span class="nav-number">1.1.</span> <span class="nav-text">查看系统的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看注册表"><span class="nav-number">1.2.</span> <span class="nav-text">查看注册表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看远程服务器"><span class="nav-number">1.3.</span> <span class="nav-text">查看远程服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-推送本地分支到远程"><span class="nav-number">1.4.</span> <span class="nav-text">git 推送本地分支到远程</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
 </section>
-          <aside id="sidebar">
-  
-    <div class="widget-wrap" style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 75%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" Suche…" value="" name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="Suche">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-</div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://github.com/dangshaocong" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="https://weibo.com/3796787503/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-     			  <li><a href="https://www.zhihu.com/people/mino-84-92/activities" title="Zhihu"><i class="fa fa-zhihu" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-            <li><a href="mailto:?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>letzter Beitrag</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/05/28/short/">git,scp,rsync</a></h6>
-              <span>May 28, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/04/27/file/">process for python</a></h6>
-              <span>April 27, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/04/03/Decorator/">装饰器</a></h6>
-              <span>April 3, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/22/process/">process for python</a></h6>
-              <span>January 22, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/13/index/">md操作</a></h6>
-              <span>January 13, 2018</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/08/centos1/">centos</a></h6>
-              <span>January 8, 2018</span>
-            </div>
-
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
         
       </div>
       <footer id="footer" class="site-footer">
