@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/05/29/vue01/</loc>
-    <lastmod>2018-05-28T17:24:38.380Z</lastmod>
-    <data>
-        <display>
-        <title>Vue-初始</title>
-        <pubTime>2018-05-28T16:56:44.935Z</pubTime>
-        
-        <tag>VUE</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端（vue）" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%EF%BC%88vue%EF%BC%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/05/28/short/</loc>
-    <lastmod>2018-05-28T06:44:32.712Z</lastmod>
+    <lastmod>2018-05-29T01:19:49.888Z</lastmod>
     <data>
         <display>
         <title>git,scp,rsync</title>
@@ -37,6 +17,26 @@
            
              
               <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/29/vue01/</loc>
+    <lastmod>2018-05-29T01:19:44.794Z</lastmod>
+    <data>
+        <display>
+        <title>Vue-初始</title>
+        <pubTime>2018-05-28T16:56:44.935Z</pubTime>
+        
+        <tag>VUE</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端（vue）" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%EF%BC%88vue%EF%BC%89/"/>
           
         </display>
     </data>
