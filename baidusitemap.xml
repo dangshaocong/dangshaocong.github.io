@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/06/09/pythonunittest/</loc>
+    <lastmod>2018-06-09T10:00:35.719Z</lastmod>
+    <data>
+        <display>
+        <title>python单元测试-unittest</title>
+        <pubTime>2018-06-09T02:42:00.000Z</pubTime>
+        
+        <tag>python自动化测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/05/29/vue01/</loc>
     <lastmod>2018-06-09T09:58:11.987Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="前端（vue）" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%EF%BC%88vue%EF%BC%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/06/09/pythonunittest/</loc>
-    <lastmod>2018-06-09T09:56:46.649Z</lastmod>
-    <data>
-        <display>
-        <title>python单元测试-unittest</title>
-        <pubTime>2018-06-09T02:42:00.000Z</pubTime>
-        
-        <tag>python自动化测试</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
           
         </display>
     </data>
