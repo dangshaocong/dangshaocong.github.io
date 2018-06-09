@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/27/file/</loc>
+    <lastmod>2018-06-09T09:52:59.849Z</lastmod>
+    <data>
+        <display>
+        <title>python-shutil模块</title>
+        <pubTime>2018-04-27T15:29:25.503Z</pubTime>
+        
+        <tag>文件操作-shutil高级模块</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/06/09/pythonunittest/</loc>
     <lastmod>2018-06-09T03:08:29.394Z</lastmod>
     <data>
@@ -57,26 +77,6 @@
            
              
               <breadCrumb title="git" url="http://yoursite.com/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/27/file/</loc>
-    <lastmod>2018-04-27T15:35:35.085Z</lastmod>
-    <data>
-        <display>
-        <title>process for python</title>
-        <pubTime>2018-04-27T15:29:25.503Z</pubTime>
-        
-        <tag>文件操作-shutil高级模块</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
           
         </display>
     </data>
