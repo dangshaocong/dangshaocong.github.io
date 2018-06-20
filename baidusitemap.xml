@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/06/20/yaml/</loc>
+    <lastmod>2018-06-20T06:36:22.904Z</lastmod>
+    <data>
+        <display>
+        <title>PyYaml</title>
+        <pubTime>2018-06-20T06:34:00.000Z</pubTime>
+        
+        <tag>python解析yaml</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/05/29/vue01/</loc>
     <lastmod>2018-06-09T10:02:45.868Z</lastmod>
     <data>

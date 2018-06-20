@@ -78,7 +78,7 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "Tags"; 
 
-  themeMenus["/categories"] = "Categories"; 
+  themeMenus["/categories"] = "Categorías"; 
 
   themeMenus["/about"] = "About"; 
 
@@ -115,7 +115,7 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categorías</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
                     
@@ -164,6 +164,116 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-yaml"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/06/20/yaml/">PyYaml</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/06/20/yaml/" class="article-date">
+	  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">June 20, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">YAML是&quot;YAML Ain&apos;t a Markup  Language&quot;（YAML不是一种置标语言）的递归缩写。</div></pre></td></tr></table></figure>
+<h4 id="1-yaml的功能"><a href="#1-yaml的功能" class="headerlink" title="1.yaml的功能"></a>1.yaml的功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。</div><div class="line"></div><div class="line">1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。</div><div class="line"></div><div class="line">2.它使用空白符号缩排和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种设定档、倾印除错内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。</div></pre></td></tr></table></figure>
+<h4 id="2-yaml的使用场景"><a href="#2-yaml的使用场景" class="headerlink" title="2.yaml的使用场景"></a>2.yaml的使用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.脚本语言</div><div class="line">实现简单，解析成本低，yaml适合在脚本语言中使用</div><div class="line"></div><div class="line">2.序列化</div><div class="line">这种yaml序列化是优于json的，因为它是宿主语言数据类型直转的</div><div class="line"></div><div class="line">3.配置文件</div><div class="line">yaml可以做配置文件，比xml配置方便的多，比ini文件的功能强大</div><div class="line">由于兼容性问题，不同语言间的数据流转建议不要用YAML.</div></pre></td></tr></table></figure>
+<h4 id="3-yaml的文件格式"><a href="#3-yaml的文件格式" class="headerlink" title="3.yaml的文件格式"></a>3.yaml的文件格式</h4><pre><code>name: Tom Smith
+age: 37
+spouse:
+    name: Jane Smith
+    age: 25
+children:
+ - name: Jimmy Smith
+   age: 15
+ - name1: Jenny Smith
+   age1: 12
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">它的基本语法规则如下。</div><div class="line">1.大小写敏感</div><div class="line">2.使用缩进表示层级关系</div><div class="line">3.缩进时不允许使用Tab键，只允许使用空格。</div><div class="line">4.缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</div><div class="line"></div><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略</div><div class="line">yaml的数据结构有3种，</div><div class="line">对象：哈希，键值，映射。</div><div class="line">数组</div><div class="line">纯量：不可拆分的值（字符串，数字，布尔，日期，浮点，时间）</div></pre></td></tr></table></figure>
+<h4 id="4-python解析yaml"><a href="#4-python解析yaml" class="headerlink" title="4.python解析yaml"></a>4.python解析yaml</h4><ol>
+<li><p>准备yaml文件，随便编写</p>
+<p>name: mino<br>age: 23<br>spouse:<br>  name: range<br>  age: 10<br>children:</p>
+<ul>
+<li>name: haha<br>age: 20</li>
+<li>name1: move<br>age1: 15</li>
+</ul>
+</li>
+</ol>
+<p>2.编写python解析</p>
+<blockquote>
+<p>首先pip install pyaml </p>
+</blockquote>
+<pre><code># -*- coding:utf-8 -*-
+import yaml
+import os
+filename=os.path.join(os.path.dirname(__file__),&apos;main.yaml&apos;).replace(&apos;\\&apos;,&apos;/&apos;)
+with open(filename,&apos;r&apos;) as f:
+    y=yaml.load(f)
+    print y
+
+
+document = &apos;&apos;&apos;
+name: Vorlin Laruknuzum
+sex: Male
+class: Priest
+title: Acolyte
+hp: [32, 71]
+sp: [1, 13]
+gold: 423
+inventory:
+- a Holy Book of Prayers (Words of Wisdom)
+- an Azure Potion of Cure Light Wounds
+- a Silver Wand of Wonder
+&apos;&apos;&apos;
+#yaml.load_all()返回一个迭代器
+with open(&quot;./test.yaml&quot;,&quot;w&quot;) as fw:
+    yaml.dump(yaml.load(document),fw)
+
+for data in yaml.load_all(document):
+    print data
+print yaml.dump(yaml.load(document))
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true" alt="案例1"></p>
+<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true" alt="案例2"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank" rel="external">PyYaml</a></li>
+<li><a href="https://github.com/yaml/pyyaml" target="_blank" rel="external">PyYaml源码</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-pythonunittest"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -1111,104 +1221,11 @@ if __name__ == &apos;__main__&apos;:
 <!-- Table of Contents -->
 
   
-    <article id="post-pyexcept"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/11/11/pyexcept/">pyexcept</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2017/11/11/pyexcept/" class="article-date">
-	  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">November 11, 2017</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为了增强程序的健壮性，管理运行时预见的错误—–异常"><a href="#为了增强程序的健壮性，管理运行时预见的错误—–异常" class="headerlink" title="为了增强程序的健壮性，管理运行时预见的错误—–异常"></a>为了增强程序的健壮性，管理运行时预见的错误—–异常</h2><pre><code>1. 错误是程序不能执行 一般包括语法错误和逻辑错误
-2. 异常是程序出现了错误，而在正常控制流以外采取的措施
-- 异常处理的过程一般有两步，引发异常和处理异常
-- 处理异常 一般是直接pass或者执行一场之后的逻辑
-</code></pre><h2 id="Python常见的异常"><a href="#Python常见的异常" class="headerlink" title="Python常见的异常"></a>Python常见的异常</h2><ul>
-<li>NameError 当调用一个没有定义的变量时解释器出现的异常<pre><code>&gt;&gt;&gt; a
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-NameError: name &apos;a&apos; is not defined
-</code></pre></li>
-<li>ZeroDivisionError 除数为0的error</li>
-<li>SyntaxError Python解释器语法错误</li>
-<li>indexError 序列的索引超标</li>
-<li>keyError 字典的键问题，字典中不存在键</li>
-<li>IOError 文件的异常，没有文件或者打开异常</li>
-<li>AttributeError 属性异常对象中没有属性</li>
-</ul>
-<p>##异常的处理</p>
-<ol>
-<li>try-except 如果try通过不执行except里面的逻辑</li>
-<li>try-finally 不管try有没有通过都要执行finally里面的代码</li>
-<li>try-except-finally</li>
-<li>try-except-else-finally</li>
-</ol>
-<h2 id="例子-返回浮点型"><a href="#例子-返回浮点型" class="headerlink" title="例子 返回浮点型"></a>例子 返回浮点型</h2><pre><code>def safe_float(obj):
-  try:
-     return float(obj)
-  except ValueError, e:
-     return &apos;ValueError&apos;, e
-  except TypeError, e:
-     return &apos;TypeError&apos;, e
-
- F:\Python2\python.exe F:/pycode/Error/handle_error.py
-(&apos;TypeError&apos;, TypeError(&apos;float() argument must be a string or a number&apos;,))
-(&apos;ValueError&apos;, ValueError(&apos;could not convert string to float: xxxx&apos;,))
-</code></pre><h2 id="捕获多处异常和异常参数"><a href="#捕获多处异常和异常参数" class="headerlink" title="捕获多处异常和异常参数"></a>捕获多处异常和异常参数</h2><pre><code>def safe_float1(obj):
- try:
-     return float(obj)
- except (TypeError, ValueError), dig:
-     print type(dig)
-     print dig
-     return str(dig)
-
-&lt;type &apos;exceptions.TypeError&apos;&gt;
- float() argument must be a string or a number
- float() argument must be a string or a number
-</code></pre>
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异常处理/">异常处理</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Siguiente</a>
   </nav>
 
 </section>
@@ -1220,9 +1237,9 @@ NameError: name &apos;a&apos; is not defined
     <form class="search-form">
         <label style="width: 75%;">
             <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" Search…" value="" name="s" title="Search for:">
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Buscar…" value="" name="s" title="Search for:">
         </label>
-        <input type="submit" class="search-form-submit" value="Search">
+        <input type="submit" class="search-form-submit" value="Buscar">
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -1301,10 +1318,22 @@ NameError: name &apos;a&apos; is not defined
     
   <div class="widget_athemes_tabs">
     <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
+      <li class="active"><a>Posts recientes</a></li>
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/06/20/yaml/">PyYaml</a></h6>
+              <span>June 20, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -1366,18 +1395,6 @@ NameError: name &apos;a&apos; is not defined
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/22/process/">process for python</a></h6>
-              <span>January 22, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1385,9 +1402,9 @@ NameError: name &apos;a&apos; is not defined
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1397,7 +1414,7 @@ NameError: name &apos;a&apos; is not defined
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1405,19 +1422,19 @@ NameError: name &apos;a&apos; is not defined
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
+      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 

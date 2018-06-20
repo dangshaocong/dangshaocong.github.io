@@ -13,25 +13,28 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>git,scp,rsync | think and code</title>
+  <title>pyyaml | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="git" />
+  <meta name="keywords" content="python解析yaml" />
   
   
   
   
-  <meta name="description" content="tools使用">
-<meta name="keywords" content="git">
+  <meta name="description" content="YAML 1YAML是&amp;quot;YAML Ain&amp;apos;t a Markup  Language&amp;quot;（YAML不是一种置标语言）的递归缩写。 1.yaml的功能12345yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。2.它使用空白符号缩排">
+<meta name="keywords" content="python解析yaml">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git,scp,rsync">
-<meta property="og:url" content="http://yoursite.com/2018/05/28/short/index.html">
+<meta property="og:title" content="PyYaml">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/yaml/index.html">
 <meta property="og:site_name" content="think and code">
-<meta property="og:description" content="tools使用">
-<meta property="og:updated_time" content="2018-05-29T01:19:49.888Z">
+<meta property="og:description" content="YAML 1YAML是&amp;quot;YAML Ain&amp;apos;t a Markup  Language&amp;quot;（YAML不是一种置标语言）的递归缩写。 1.yaml的功能12345yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。2.它使用空白符号缩排">
+<meta property="og:image" content="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true">
+<meta property="og:image" content="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true">
+<meta property="og:updated_time" content="2018-06-20T06:36:22.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git,scp,rsync">
-<meta name="twitter:description" content="tools使用">
+<meta name="twitter:title" content="PyYaml">
+<meta name="twitter:description" content="YAML 1YAML是&amp;quot;YAML Ain&amp;apos;t a Markup  Language&amp;quot;（YAML不是一种置标语言）的递归缩写。 1.yaml的功能12345yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。2.它使用空白符号缩排">
+<meta name="twitter:image" content="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true">
   
     <link rel="alternate" href="/atom.xml" title="think and code" type="application/atom+xml">
   
@@ -167,7 +170,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-short" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-yaml" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -175,7 +178,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      git,scp,rsync
+      PyYaml
     </h1>
   
 
@@ -183,8 +186,8 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/05/28/short/" class="article-date">
-	  <time datetime="2018-05-28T02:32:00.000Z" itemprop="datePublished">May 28, 2018</time>
+	Posted on <a href="/2018/06/20/yaml/" class="article-date">
+	  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">June 20, 2018</time>
 	</a>
 
       
@@ -195,28 +198,80 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用的操作-git-scp-rsync"><a href="#常用的操作-git-scp-rsync" class="headerlink" title="常用的操作(git,scp,rsync)"></a>常用的操作(git,scp,rsync)</h1><hr>
-<h2 id="查看系统的版本"><a href="#查看系统的版本" class="headerlink" title="查看系统的版本"></a>查看系统的版本</h2><p>   win+R dixdiag</p>
-<h2 id="查看注册表"><a href="#查看注册表" class="headerlink" title="查看注册表"></a>查看注册表</h2><p>   regedit</p>
-<h2 id="查看远程服务器"><a href="#查看远程服务器" class="headerlink" title="查看远程服务器"></a>查看远程服务器</h2><p>scp -P22 10.100.0.21:/tmp  /tmp  获取远程的文件到本地<br>scp -P22 -r /tmp  10.100.0.21:/tmp 将本地的内容推到远程</p>
-<p>rsync<br>其中带有/查看目录里面的文件，不带/查看目录本身<br>rsync 10.100.0.21:/tmp/ 列出远程服务器的文件内容<br>rsync -a 10.100.0.21:/tmp/ 列出远程的文件夹 -a将会显示出所有的文件结构<br>rsync /tmp /etc/tmp 本地同步</p>
-<p>rsync -a /etc /tmp  这个命令会在/tmp目录创建etc目录<br>rsync -a /etc/ /tmp 这个命令不会在/tmp 目录创建etc目录。<br>git config –global user.name<br>git config –global user.email</p>
-<h2 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h2><p> ssh-keygen -t rsa -C “1527715645@qq.com”</p>
-<h2 id="git-推送本地分支到远程"><a href="#git-推送本地分支到远程" class="headerlink" title="git 推送本地分支到远程"></a>git 推送本地分支到远程</h2><p>git push origin feature:feature</p>
-<p>查看本地分支 git branch<br>查看远程分支 git branch -r</p>
-<p>删除远程分支git push origin –delete <branchname><br>删除本地分支 git branch -d <branchname></branchname></branchname></p>
-<p>##创建并且切换本地分支<br>git checkout -b 分支名  创建切换本地分支<br>git branch+git checkout</p>
+        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">YAML是&quot;YAML Ain&apos;t a Markup  Language&quot;（YAML不是一种置标语言）的递归缩写。</div></pre></td></tr></table></figure>
+<h4 id="1-yaml的功能"><a href="#1-yaml的功能" class="headerlink" title="1.yaml的功能"></a>1.yaml的功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。</div><div class="line"></div><div class="line">1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。</div><div class="line"></div><div class="line">2.它使用空白符号缩排和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种设定档、倾印除错内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。</div></pre></td></tr></table></figure>
+<h4 id="2-yaml的使用场景"><a href="#2-yaml的使用场景" class="headerlink" title="2.yaml的使用场景"></a>2.yaml的使用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.脚本语言</div><div class="line">实现简单，解析成本低，yaml适合在脚本语言中使用</div><div class="line"></div><div class="line">2.序列化</div><div class="line">这种yaml序列化是优于json的，因为它是宿主语言数据类型直转的</div><div class="line"></div><div class="line">3.配置文件</div><div class="line">yaml可以做配置文件，比xml配置方便的多，比ini文件的功能强大</div><div class="line">由于兼容性问题，不同语言间的数据流转建议不要用YAML.</div></pre></td></tr></table></figure>
+<h4 id="3-yaml的文件格式"><a href="#3-yaml的文件格式" class="headerlink" title="3.yaml的文件格式"></a>3.yaml的文件格式</h4><pre><code>name: Tom Smith
+age: 37
+spouse:
+    name: Jane Smith
+    age: 25
+children:
+ - name: Jimmy Smith
+   age: 15
+ - name1: Jenny Smith
+   age1: 12
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">它的基本语法规则如下。</div><div class="line">1.大小写敏感</div><div class="line">2.使用缩进表示层级关系</div><div class="line">3.缩进时不允许使用Tab键，只允许使用空格。</div><div class="line">4.缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</div><div class="line"></div><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略</div><div class="line">yaml的数据结构有3种，</div><div class="line">对象：哈希，键值，映射。</div><div class="line">数组</div><div class="line">纯量：不可拆分的值（字符串，数字，布尔，日期，浮点，时间）</div></pre></td></tr></table></figure>
+<h4 id="4-python解析yaml"><a href="#4-python解析yaml" class="headerlink" title="4.python解析yaml"></a>4.python解析yaml</h4><ol>
+<li><p>准备yaml文件，随便编写</p>
+<p>name: mino<br>age: 23<br>spouse:<br>  name: range<br>  age: 10<br>children:</p>
+<ul>
+<li>name: haha<br>age: 20</li>
+<li>name1: move<br>age1: 15</li>
+</ul>
+</li>
+</ol>
+<p>2.编写python解析</p>
+<blockquote>
+<p>首先pip install pyaml </p>
+</blockquote>
+<pre><code># -*- coding:utf-8 -*-
+import yaml
+import os
+filename=os.path.join(os.path.dirname(__file__),&apos;main.yaml&apos;).replace(&apos;\\&apos;,&apos;/&apos;)
+with open(filename,&apos;r&apos;) as f:
+    y=yaml.load(f)
+    print y
+
+
+document = &apos;&apos;&apos;
+name: Vorlin Laruknuzum
+sex: Male
+class: Priest
+title: Acolyte
+hp: [32, 71]
+sp: [1, 13]
+gold: 423
+inventory:
+- a Holy Book of Prayers (Words of Wisdom)
+- an Azure Potion of Cure Light Wounds
+- a Silver Wand of Wonder
+&apos;&apos;&apos;
+#yaml.load_all()返回一个迭代器
+with open(&quot;./test.yaml&quot;,&quot;w&quot;) as fw:
+    yaml.dump(yaml.load(document),fw)
+
+for data in yaml.load_all(document):
+    print data
+print yaml.dump(yaml.load(document))
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true" alt="案例1"></p>
+<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true" alt="案例2"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank" rel="external">PyYaml</a></li>
+<li><a href="https://github.com/yaml/pyyaml" target="_blank" rel="external">PyYaml源码</a></li>
+</ul>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/git/">git</a>
+    <a class="article-category-link" href="/categories/python/">python</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
 
       
         <div id="donation_div"></div>
@@ -264,19 +319,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2018/05/29/vue01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
-      <div class="article-nav-title">
-        
-          Vue-初始
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/27/file/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/09/pythonunittest/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Viejo</strong>
-      <div class="article-nav-title">python-shutil模块</div>
+      <div class="article-nav-title">python单元测试-unittest</div>
     </a>
   
 </nav>
@@ -290,7 +336,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的操作-git-scp-rsync"><span class="nav-number">1.</span> <span class="nav-text">常用的操作(git,scp,rsync)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看系统的版本"><span class="nav-number">1.1.</span> <span class="nav-text">查看系统的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看注册表"><span class="nav-number">1.2.</span> <span class="nav-text">查看注册表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看远程服务器"><span class="nav-number">1.3.</span> <span class="nav-text">查看远程服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成公钥"><span class="nav-number">1.4.</span> <span class="nav-text">生成公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-推送本地分支到远程"><span class="nav-number">1.5.</span> <span class="nav-text">git 推送本地分支到远程</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YAML"><span class="nav-number">1.</span> <span class="nav-text">YAML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-yaml的功能"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.yaml的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-yaml的使用场景"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.yaml的使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-yaml的文件格式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.yaml的文件格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-python解析yaml"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4.python解析yaml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考链接"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">参考链接</span></a></li></ol></li></ol></li></ol></li></ol>
     
     </div>
   </aside>

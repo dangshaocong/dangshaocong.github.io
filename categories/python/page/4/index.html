@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Categorías | think and code</title>
+  <title>categoría: python | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -21,13 +21,12 @@
   
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="think and code">
+<meta property="og:url" content="http://yoursite.com/categories/python/page/4/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
-<meta property="og:updated_time" content="2018-01-09T13:09:34.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="think and code">
 <meta name="twitter:description" content="人生苦短">
   
     <link rel="alternate" href="/atom.xml" title="think and code" type="application/atom+xml">
@@ -164,15 +163,17 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
+          <section id="main">
+  
+    <article id="post-Timer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" class="article-title" itemprop="name">
-      categories
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/10/31/Timer/">python启动定时任务</a>
     </h1>
   
 
@@ -180,72 +181,51 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/categories/index.html" class="article-date">
-	  <time datetime="2018-01-09T10:07:39.000Z" itemprop="datePublished">January 9, 2018</time>
+	Posted on <a href="/2017/10/31/Timer/" class="article-date">
+	  <time datetime="2017-10-31T11:36:30.000Z" itemprop="datePublished">October 31, 2017</time>
 	</a>
 
       
-	<span id="busuanzi_container_page_pv">
-	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="python启动定时任务"><a href="#python启动定时任务" class="headerlink" title="python启动定时任务"></a>python启动定时任务</h3><h1 id="1-time模块"><a href="#1-time模块" class="headerlink" title="1.time模块"></a>1.time模块</h1><p><code>time.sleep(n)</code><br>例如下面的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def work(n):             - 每隔n 秒 输出 1到10之间的一个数</div><div class="line">  for i in range(10):</div><div class="line">      print i</div><div class="line">      time.sleep(n)</div></pre></td></tr></table></figure></p>
+<p>上面的实例是阻塞的，在sleep的时间内程序一直堵塞<br>详情请参考官方文档—–<a href="https://docs.python.org/2/library/time.html?sleep#time.sleep" target="_blank" rel="external">time.sleep</a></p>
+<h1 id="2-sched-模块"><a href="#2-sched-模块" class="headerlink" title="2.sched 模块"></a>2.sched 模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">  1.导入sched模块</div><div class="line">  import sched</div><div class="line">----------------------------------------------------------------------------------</div><div class="line">  2.创建scheduler对象</div><div class="line">  s = sched.scheduler(time.time, time.sleep)</div><div class="line">  - time.time:返回时间戳的函数</div><div class="line">  - time.sleep:可以在定时未到达之前阻塞</div><div class="line">------------------------------------------------------------------------------------</div><div class="line">  3.定义要执行的任务</div><div class="line">  def worker(n):</div><div class="line">        pass</div><div class="line">-------------------------------------------------------------------------------------</div><div class="line">  4.将任务添加到scheduler的盒子中</div><div class="line">  s.enter(delay,priority,action,arguments)</div><div class="line">  - delay:int /float型的表示多少秒后执行这个action任务</div><div class="line">  - priority:优先级表示当多个任务同时在一个时刻将执行优先执行那个任务</div><div class="line">    0优先级最高，数字越小优先级越高</div><div class="line">  - action: 执行的任务在上面的例子中也就是函数名worker</div><div class="line">  - arguments:参数列表以元组的形式如：(n,)</div><div class="line">    如果没有参数传入直接传空括号()</div><div class="line">--------------------------------------------------------------------------------------</div><div class="line">  5.运行任务</div><div class="line">  s.run()</div></pre></td></tr></table></figure>
+<p>在多线程环境中由于线程全局锁安全，一个任务没结束，就要等待也是阻塞的详细请查看官方库—-<a href="https://docs.python.org/2/library/sched.html" target="_blank" rel="external">sched</a></p>
+<h1 id="3-threading-Timer"><a href="#3-threading-Timer" class="headerlink" title="3.threading.Timer()"></a>3.threading.Timer()</h1><p>为了解决上面的阻塞问题，再多线程的环境中能够并发执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  1.导入模块</div><div class="line">  from threading import Timer</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  2.定义要执行的任务</div><div class="line">  def work(arg):</div><div class="line">        pass</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  3.启动执行</div><div class="line">  Timer(delay, work, (arg)).start()</div><div class="line">  - 不需要区分优先级可以同时执行任务delay相同时就同时执行任务</div><div class="line">  -  delay:int /float型的表示多少秒后执行这个work任务</div><div class="line">  -  work: 执行任务的方法名字</div><div class="line">  -  arg:参数列表元祖(arg,)如果没有就是()</div></pre></td></tr></table></figure></p>
+<p>详情请参考官方文档：<a href="https://docs.python.org/2/library/sched.html?highlight=threading%20timer" target="_blank" rel="external">threading.Timer</a></p>
+<h1 id="4-更加高级的任务调度框架-apscheduler"><a href="#4-更加高级的任务调度框架-apscheduler" class="headerlink" title="4.更加高级的任务调度框架 apscheduler"></a>4.更加高级的任务调度框架 apscheduler</h1><p>   官方文档   <a href="http://apscheduler.readthedocs.io/en/latest/" target="_blank" rel="external">查看</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> 1.导入模块</div><div class="line">  from apscheduler.schedulers.blocking import BlockingScheduler</div><div class="line"></div><div class="line"> 2.初始化一个任务实例</div><div class="line">  sched = BlockingScheduler()</div><div class="line"></div><div class="line"> 3.添加作业任务</div><div class="line"> sched.add_job(my_job, &apos;interval&apos;, seconds=5)</div><div class="line">- my_job：作业任务</div><div class="line">-‘ interval ’  ‘cron ’等等</div><div class="line"></div><div class="line">4.启动任务</div><div class="line">  sched.start()</div></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
-      
-      
-        <div id="donation_div"></div>
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
 
-<script src="/js/vdonate.js"></script>
-<script>
-var a = new Donate({
-  title: '', // 可选参数，打赏标题
-  btnText: 'Donate', // 可选参数，打赏按钮文字
-  el: document.getElementById('donation_div'),
-  wechatImage: '',
-  alipayImage: ''
-});
-</script>
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li></ul>
+
       
             
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
       
     </footer>
   </div>
   
-    
-  
 </article>
 
 <!-- Table of Contents -->
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/categories/python/page/3/">Previo</a><a class="page-number" href="/categories/python/">1</a><a class="page-number" href="/categories/python/page/2/">2</a><a class="page-number" href="/categories/python/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
 </section>
           <aside id="sidebar">
   

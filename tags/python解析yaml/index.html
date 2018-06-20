@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Categorías | think and code</title>
+  <title>tag: python解析yaml | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -21,13 +21,12 @@
   
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="think and code">
+<meta property="og:url" content="http://yoursite.com/tags/python解析yaml/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
-<meta property="og:updated_time" content="2018-01-09T13:09:34.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="think and code">
 <meta name="twitter:description" content="人生苦短">
   
     <link rel="alternate" href="/atom.xml" title="think and code" type="application/atom+xml">
@@ -164,15 +163,17 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
+          <section id="main">
+  
+    <article id="post-yaml"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" class="article-title" itemprop="name">
-      categories
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/06/20/yaml/">PyYaml</a>
     </h1>
   
 
@@ -180,72 +181,102 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/categories/index.html" class="article-date">
-	  <time datetime="2018-01-09T10:07:39.000Z" itemprop="datePublished">January 9, 2018</time>
+	Posted on <a href="/2018/06/20/yaml/" class="article-date">
+	  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">June 20, 2018</time>
 	</a>
 
       
-	<span id="busuanzi_container_page_pv">
-	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">YAML是&quot;YAML Ain&apos;t a Markup  Language&quot;（YAML不是一种置标语言）的递归缩写。</div></pre></td></tr></table></figure>
+<h4 id="1-yaml的功能"><a href="#1-yaml的功能" class="headerlink" title="1.yaml的功能"></a>1.yaml的功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。</div><div class="line"></div><div class="line">1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。</div><div class="line"></div><div class="line">2.它使用空白符号缩排和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种设定档、倾印除错内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。</div></pre></td></tr></table></figure>
+<h4 id="2-yaml的使用场景"><a href="#2-yaml的使用场景" class="headerlink" title="2.yaml的使用场景"></a>2.yaml的使用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.脚本语言</div><div class="line">实现简单，解析成本低，yaml适合在脚本语言中使用</div><div class="line"></div><div class="line">2.序列化</div><div class="line">这种yaml序列化是优于json的，因为它是宿主语言数据类型直转的</div><div class="line"></div><div class="line">3.配置文件</div><div class="line">yaml可以做配置文件，比xml配置方便的多，比ini文件的功能强大</div><div class="line">由于兼容性问题，不同语言间的数据流转建议不要用YAML.</div></pre></td></tr></table></figure>
+<h4 id="3-yaml的文件格式"><a href="#3-yaml的文件格式" class="headerlink" title="3.yaml的文件格式"></a>3.yaml的文件格式</h4><pre><code>name: Tom Smith
+age: 37
+spouse:
+    name: Jane Smith
+    age: 25
+children:
+ - name: Jimmy Smith
+   age: 15
+ - name1: Jenny Smith
+   age1: 12
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">它的基本语法规则如下。</div><div class="line">1.大小写敏感</div><div class="line">2.使用缩进表示层级关系</div><div class="line">3.缩进时不允许使用Tab键，只允许使用空格。</div><div class="line">4.缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</div><div class="line"></div><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略</div><div class="line">yaml的数据结构有3种，</div><div class="line">对象：哈希，键值，映射。</div><div class="line">数组</div><div class="line">纯量：不可拆分的值（字符串，数字，布尔，日期，浮点，时间）</div></pre></td></tr></table></figure>
+<h4 id="4-python解析yaml"><a href="#4-python解析yaml" class="headerlink" title="4.python解析yaml"></a>4.python解析yaml</h4><ol>
+<li><p>准备yaml文件，随便编写</p>
+<p>name: mino<br>age: 23<br>spouse:<br>  name: range<br>  age: 10<br>children:</p>
+<ul>
+<li>name: haha<br>age: 20</li>
+<li>name1: move<br>age1: 15</li>
+</ul>
+</li>
+</ol>
+<p>2.编写python解析</p>
+<blockquote>
+<p>首先pip install pyaml </p>
+</blockquote>
+<pre><code># -*- coding:utf-8 -*-
+import yaml
+import os
+filename=os.path.join(os.path.dirname(__file__),&apos;main.yaml&apos;).replace(&apos;\\&apos;,&apos;/&apos;)
+with open(filename,&apos;r&apos;) as f:
+    y=yaml.load(f)
+    print y
+
+
+document = &apos;&apos;&apos;
+name: Vorlin Laruknuzum
+sex: Male
+class: Priest
+title: Acolyte
+hp: [32, 71]
+sp: [1, 13]
+gold: 423
+inventory:
+- a Holy Book of Prayers (Words of Wisdom)
+- an Azure Potion of Cure Light Wounds
+- a Silver Wand of Wonder
+&apos;&apos;&apos;
+#yaml.load_all()返回一个迭代器
+with open(&quot;./test.yaml&quot;,&quot;w&quot;) as fw:
+    yaml.dump(yaml.load(document),fw)
+
+for data in yaml.load_all(document):
+    print data
+print yaml.dump(yaml.load(document))
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true" alt="案例1"></p>
+<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true" alt="案例2"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank" rel="external">PyYaml</a></li>
+<li><a href="https://github.com/yaml/pyyaml" target="_blank" rel="external">PyYaml源码</a></li>
+</ul>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
-      
-      
-        <div id="donation_div"></div>
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
 
-<script src="/js/vdonate.js"></script>
-<script>
-var a = new Donate({
-  title: '', // 可选参数，打赏标题
-  btnText: 'Donate', // 可选参数，打赏按钮文字
-  el: document.getElementById('donation_div'),
-  wechatImage: '',
-  alipayImage: ''
-});
-</script>
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
+
       
             
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
       
     </footer>
   </div>
   
-    
-  
 </article>
 
 <!-- Table of Contents -->
+
+  
+
+
 </section>
           <aside id="sidebar">
   

@@ -78,7 +78,7 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "Tags"; 
 
-  themeMenus["/categories"] = "Categories"; 
+  themeMenus["/categories"] = "Categorías"; 
 
   themeMenus["/about"] = "About"; 
 
@@ -115,7 +115,7 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categorías</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
                     
@@ -164,6 +164,99 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-pyexcept"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/11/11/pyexcept/">pyexcept</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2017/11/11/pyexcept/" class="article-date">
+	  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">November 11, 2017</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为了增强程序的健壮性，管理运行时预见的错误—–异常"><a href="#为了增强程序的健壮性，管理运行时预见的错误—–异常" class="headerlink" title="为了增强程序的健壮性，管理运行时预见的错误—–异常"></a>为了增强程序的健壮性，管理运行时预见的错误—–异常</h2><pre><code>1. 错误是程序不能执行 一般包括语法错误和逻辑错误
+2. 异常是程序出现了错误，而在正常控制流以外采取的措施
+- 异常处理的过程一般有两步，引发异常和处理异常
+- 处理异常 一般是直接pass或者执行一场之后的逻辑
+</code></pre><h2 id="Python常见的异常"><a href="#Python常见的异常" class="headerlink" title="Python常见的异常"></a>Python常见的异常</h2><ul>
+<li>NameError 当调用一个没有定义的变量时解释器出现的异常<pre><code>&gt;&gt;&gt; a
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &apos;a&apos; is not defined
+</code></pre></li>
+<li>ZeroDivisionError 除数为0的error</li>
+<li>SyntaxError Python解释器语法错误</li>
+<li>indexError 序列的索引超标</li>
+<li>keyError 字典的键问题，字典中不存在键</li>
+<li>IOError 文件的异常，没有文件或者打开异常</li>
+<li>AttributeError 属性异常对象中没有属性</li>
+</ul>
+<p>##异常的处理</p>
+<ol>
+<li>try-except 如果try通过不执行except里面的逻辑</li>
+<li>try-finally 不管try有没有通过都要执行finally里面的代码</li>
+<li>try-except-finally</li>
+<li>try-except-else-finally</li>
+</ol>
+<h2 id="例子-返回浮点型"><a href="#例子-返回浮点型" class="headerlink" title="例子 返回浮点型"></a>例子 返回浮点型</h2><pre><code>def safe_float(obj):
+  try:
+     return float(obj)
+  except ValueError, e:
+     return &apos;ValueError&apos;, e
+  except TypeError, e:
+     return &apos;TypeError&apos;, e
+
+ F:\Python2\python.exe F:/pycode/Error/handle_error.py
+(&apos;TypeError&apos;, TypeError(&apos;float() argument must be a string or a number&apos;,))
+(&apos;ValueError&apos;, ValueError(&apos;could not convert string to float: xxxx&apos;,))
+</code></pre><h2 id="捕获多处异常和异常参数"><a href="#捕获多处异常和异常参数" class="headerlink" title="捕获多处异常和异常参数"></a>捕获多处异常和异常参数</h2><pre><code>def safe_float1(obj):
+ try:
+     return float(obj)
+ except (TypeError, ValueError), dig:
+     print type(dig)
+     print dig
+     return str(dig)
+
+&lt;type &apos;exceptions.TypeError&apos;&gt;
+ float() argument must be a string or a number
+ float() argument must be a string or a number
+</code></pre>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异常处理/">异常处理</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-Timer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -316,7 +409,7 @@ var themeMenus = {};
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">Previo</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 </section>
@@ -328,9 +421,9 @@ var themeMenus = {};
     <form class="search-form">
         <label style="width: 75%;">
             <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" Search…" value="" name="s" title="Search for:">
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Buscar…" value="" name="s" title="Search for:">
         </label>
-        <input type="submit" class="search-form-submit" value="Search">
+        <input type="submit" class="search-form-submit" value="Buscar">
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -409,10 +502,22 @@ var themeMenus = {};
     
   <div class="widget_athemes_tabs">
     <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
+      <li class="active"><a>Posts recientes</a></li>
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/06/20/yaml/">PyYaml</a></h6>
+              <span>June 20, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -474,18 +579,6 @@ var themeMenus = {};
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/22/process/">process for python</a></h6>
-              <span>January 22, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -493,9 +586,9 @@ var themeMenus = {};
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -505,7 +598,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -513,19 +606,19 @@ var themeMenus = {};
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
+      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 

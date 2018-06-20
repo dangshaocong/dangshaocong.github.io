@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>category: python | think and code</title>
+  <title>categoría: python | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -78,7 +78,7 @@ var themeMenus = {};
 
   themeMenus["/tags"] = "Tags"; 
 
-  themeMenus["/categories"] = "Categories"; 
+  themeMenus["/categories"] = "Categorías"; 
 
   themeMenus["/about"] = "About"; 
 
@@ -115,7 +115,7 @@ var themeMenus = {};
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
                     
-                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categorías</a> </li>
                     
                       <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
                     
@@ -164,6 +164,116 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
+  
+    <article id="post-yaml"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/06/20/yaml/">PyYaml</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/06/20/yaml/" class="article-date">
+	  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">June 20, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">YAML是&quot;YAML Ain&apos;t a Markup  Language&quot;（YAML不是一种置标语言）的递归缩写。</div></pre></td></tr></table></figure>
+<h4 id="1-yaml的功能"><a href="#1-yaml的功能" class="headerlink" title="1.yaml的功能"></a>1.yaml的功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。</div><div class="line"></div><div class="line">1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。</div><div class="line"></div><div class="line">2.它使用空白符号缩排和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种设定档、倾印除错内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。</div></pre></td></tr></table></figure>
+<h4 id="2-yaml的使用场景"><a href="#2-yaml的使用场景" class="headerlink" title="2.yaml的使用场景"></a>2.yaml的使用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.脚本语言</div><div class="line">实现简单，解析成本低，yaml适合在脚本语言中使用</div><div class="line"></div><div class="line">2.序列化</div><div class="line">这种yaml序列化是优于json的，因为它是宿主语言数据类型直转的</div><div class="line"></div><div class="line">3.配置文件</div><div class="line">yaml可以做配置文件，比xml配置方便的多，比ini文件的功能强大</div><div class="line">由于兼容性问题，不同语言间的数据流转建议不要用YAML.</div></pre></td></tr></table></figure>
+<h4 id="3-yaml的文件格式"><a href="#3-yaml的文件格式" class="headerlink" title="3.yaml的文件格式"></a>3.yaml的文件格式</h4><pre><code>name: Tom Smith
+age: 37
+spouse:
+    name: Jane Smith
+    age: 25
+children:
+ - name: Jimmy Smith
+   age: 15
+ - name1: Jenny Smith
+   age1: 12
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">它的基本语法规则如下。</div><div class="line">1.大小写敏感</div><div class="line">2.使用缩进表示层级关系</div><div class="line">3.缩进时不允许使用Tab键，只允许使用空格。</div><div class="line">4.缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</div><div class="line"></div><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略</div><div class="line">yaml的数据结构有3种，</div><div class="line">对象：哈希，键值，映射。</div><div class="line">数组</div><div class="line">纯量：不可拆分的值（字符串，数字，布尔，日期，浮点，时间）</div></pre></td></tr></table></figure>
+<h4 id="4-python解析yaml"><a href="#4-python解析yaml" class="headerlink" title="4.python解析yaml"></a>4.python解析yaml</h4><ol>
+<li><p>准备yaml文件，随便编写</p>
+<p>name: mino<br>age: 23<br>spouse:<br>  name: range<br>  age: 10<br>children:</p>
+<ul>
+<li>name: haha<br>age: 20</li>
+<li>name1: move<br>age1: 15</li>
+</ul>
+</li>
+</ol>
+<p>2.编写python解析</p>
+<blockquote>
+<p>首先pip install pyaml </p>
+</blockquote>
+<pre><code># -*- coding:utf-8 -*-
+import yaml
+import os
+filename=os.path.join(os.path.dirname(__file__),&apos;main.yaml&apos;).replace(&apos;\\&apos;,&apos;/&apos;)
+with open(filename,&apos;r&apos;) as f:
+    y=yaml.load(f)
+    print y
+
+
+document = &apos;&apos;&apos;
+name: Vorlin Laruknuzum
+sex: Male
+class: Priest
+title: Acolyte
+hp: [32, 71]
+sp: [1, 13]
+gold: 423
+inventory:
+- a Holy Book of Prayers (Words of Wisdom)
+- an Azure Potion of Cure Light Wounds
+- a Silver Wand of Wonder
+&apos;&apos;&apos;
+#yaml.load_all()返回一个迭代器
+with open(&quot;./test.yaml&quot;,&quot;w&quot;) as fw:
+    yaml.dump(yaml.load(document),fw)
+
+for data in yaml.load_all(document):
+    print data
+print yaml.dump(yaml.load(document))
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true" alt="案例1"></p>
+<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true" alt="案例2"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank" rel="external">PyYaml</a></li>
+<li><a href="https://github.com/yaml/pyyaml" target="_blank" rel="external">PyYaml源码</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
   
     <article id="post-pythonunittest"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
@@ -316,111 +426,11 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
 <!-- Table of Contents -->
 
   
-    <article id="post-file"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/04/27/file/">python-shutil模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2018/04/27/file/" class="article-date">
-	  <time datetime="2018-04-27T15:29:25.503Z" itemprop="datePublished">April 27, 2018</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="高级文件操作模块-shutil"><a href="#高级文件操作模块-shutil" class="headerlink" title="高级文件操作模块-shutil"></a>高级文件操作模块-shutil</h1><hr>
-<h2 id="背景描述"><a href="#背景描述" class="headerlink" title="背景描述"></a>背景描述</h2><blockquote>
-<p>os模块，已经提供了，对文件的基本的操作，比如对，文件的新建，移动，删除。绝对路径，父目录，文件夹。这些只是最基本的功能，但是并没有提供文件内容复制，压缩，打包，解压。shutil则是对os模块的扩展</p>
-</blockquote>
-<h2 id="shutil的基本方法介绍"><a href="#shutil的基本方法介绍" class="headerlink" title="shutil的基本方法介绍"></a>shutil的基本方法介绍</h2><p>1.copy文件内容，到另外一个文件，可以指定拷贝文件的大小。</p>
-<pre><code>import shutil
-shutil.copyfileobj(fscrc,fdst,length)
-</code></pre><blockquote>
-<p>其中fscrc,fdst均为文件对象，需要打开文件，才能进行复制，最后的length参数是可选的，指定复制文件内容的大小。</p>
-</blockquote>
-<p>2.copy文件内容，上面的复制很麻烦，还需要自己手动打开文件。open函数打开，接下来看下面的方法。</p>
-<pre><code>import shutil
-shutil.copyfile(src,dst) src dst 均为文件名
-</code></pre><blockquote>
-<p>这个dst文件不存在的话，就新建一个文件然后将src的内容写进去。如果存在直接覆盖dst文件的内容</p>
-</blockquote>
-<p>3.copy文件权限，仅仅拷贝src的文件权限到dst</p>
-<pre><code>import shutil
-shutil.copymod(src,dst) src,dst只能为文件
-</code></pre><blockquote>
-<p>将文件src的权限直接copy到dst文件，如果dst文件不存在，就会报错。 让dst和src文件拥有相同的权限。</p>
-</blockquote>
-<pre><code>Traceback (most recent call last):
-  File &quot;C:\Users\admin\Desktop\resource\baseCode\fileCore\       handler.py&quot;, line 7, in &lt;module&gt;
-  shutil.copymode(&apos;read1.txt&apos;,&apos;read4.txt&apos;)
-  File &quot;D:\python2.7\lib\shutil.py&quot;, line 91, in copymode
-  os.chmod(dst, mode)
-  WindowsError: [Error 2] : &apos;read4.txt&apos;
-</code></pre><p>4.copy文件的所有信息，状态信息。包括权限，组，用户，信息。</p>
-<pre><code>import shutil
-shutil.copystat(src,dst)  #包括文件的mtime ctime
-</code></pre><p>5.copy 将文件复制到文件夹中</p>
-<pre><code>shutil.copy(file,dir) 
-#该函数的返回值是复制成功后的字符串格式的文件路径
-</code></pre><blockquote>
-<p>将file完全移动到dir目录中，只能复制单个文件到指定的路径中。如果后面是文件名，那么dir将会被当成复制后的文件名称。</p>
-</blockquote>
-<p>6.递归复制文件夹中的内容到指定的目录</p>
-<pre><code>shutil.copytree(src,dir)
-#将src里面的文件夹里的所有的文件及其子目录的内容递归复制到     目标目录。
-</code></pre><blockquote>
-<p>注意，如果 destination 文件夹已经存在，该操作并返回一个 FileExistsError 错误，提示文件已存在。即表示，如果执行了该函数，程序会自动创建一个新文件夹（destination参数）并将 source 文件夹中的内容复制过去</p>
-</blockquote>
-<p>7.删除文件夹里面的所有内容</p>
-<pre><code>shutil.rmtree(path) #删除path目录下的所有东西。
-</code></pre><blockquote>
-<p>上面的删除要特别注意可以用字符串的endwith()属性来判断。</p>
-</blockquote>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>对于文件和文件夹的操作，最好是os和shutil来结合使用，会达到最佳的效果奥。。。。加油！！！！！<br>也可以参阅官方文档</p>
-<ul>
-<li><a href="https://docs.python.org/2/library/shutil.html" target="_blank" rel="external">shutil-doc</a></li>
-<li><a href="https://docs.python.org/2/library/os.html" target="_blank" rel="external">os-doc</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/categories/python/page/2/">2</a><a class="page-number" href="/categories/python/page/3/">3</a><a class="extend next" rel="next" href="/categories/python/page/2/">Next</a>
+    <span class="page-number current">1</span><a class="page-number" href="/categories/python/page/2/">2</a><a class="page-number" href="/categories/python/page/3/">3</a><a class="page-number" href="/categories/python/page/4/">4</a><a class="extend next" rel="next" href="/categories/python/page/2/">Siguiente</a>
   </nav>
 
 </section>
@@ -432,9 +442,9 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
     <form class="search-form">
         <label style="width: 75%;">
             <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 42px;" placeholder=" Search…" value="" name="s" title="Search for:">
+            <input type="search" class="search-field" style="height: 42px;" placeholder=" Buscar…" value="" name="s" title="Search for:">
         </label>
-        <input type="submit" class="search-form-submit" value="Search">
+        <input type="submit" class="search-form-submit" value="Buscar">
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -513,10 +523,22 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
     
   <div class="widget_athemes_tabs">
     <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
+      <li class="active"><a>Posts recientes</a></li>
     </ul>
     <div class="widget">
       <ul>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2018/06/20/yaml/">PyYaml</a></h6>
+              <span>June 20, 2018</span>
+            </div>
+
+          </li>
         
           <li class="clearfix">
 
@@ -578,18 +600,6 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/01/22/process/">process for python</a></h6>
-              <span>January 22, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -597,9 +607,9 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Categorías</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -609,7 +619,7 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -617,19 +627,19 @@ shutil.copystat(src,dst)  #包括文件的mtime ctime
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
-      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
+      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
