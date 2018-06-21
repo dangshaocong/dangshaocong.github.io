@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>Archives | think and code</title>
+  <title>tag: centos(mtu) | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="think and code">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/centos-MTU/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -164,337 +164,74 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 15 posts in total till now.</span></blockquote>
-
-
-
-
-	<!-- 完全显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/06/20/yaml/" class="archive-article-date">
-		  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">Jun 20, 2018</time>
-	  </a>
-      
+  
+    <article id="post-mtu"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/06/20/yaml/">PyYaml</a>
+      <a class="article-title" href="/2018/01/08/mtu/">CENTOS-MTU</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/06/09/pythonunittest/" class="archive-article-date">
-		  <time datetime="2018-06-09T02:42:00.000Z" itemprop="datePublished">Jun 09, 2018</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/pythonunittest/">python单元测试-unittest</a>
-    </h1>
-  
+	Posted on <a href="/2018/01/08/mtu/" class="article-date">
+	  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">January 8, 2018</time>
+	</a>
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/05/29/vue01/" class="archive-article-date">
-		  <time datetime="2018-05-28T16:56:44.935Z" itemprop="datePublished">May 29, 2018</time>
-	  </a>
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/vue01/">Vue-初始</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/05/28/short/" class="archive-article-date">
-		  <time datetime="2018-05-28T02:32:00.000Z" itemprop="datePublished">May 28, 2018</time>
-	  </a>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/05/28/short/">git,scp,rsync</a>
-    </h1>
-  
+        <hr>
+<p>MTU</p>
+<h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Maximum Transmission Unit 最大传送单元。</div></pre></td></tr></table></figure>
+<h4 id="2-mtu的作用"><a href="#2-mtu的作用" class="headerlink" title="2.mtu的作用"></a>2.mtu的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">而使用的最大帧越小，传输包的量就越大，计算量相应会多，而产生的后果是：</div><div class="line">a：增加主机的计算量，消耗CPU资源；</div><div class="line">b：影响网络传输的速度。</div><div class="line">MTU的值越大：</div><div class="line">而使用大帧优点自然也不言而喻 ———— 降低CPU计算量、加快数据传输</div></pre></td></tr></table></figure>
+<h4 id="3-mtu的查看"><a href="#3-mtu的查看" class="headerlink" title="3.mtu的查看"></a>3.mtu的查看</h4><pre><code>centos7 网卡如果做了bond绑定：cat /sys/class/net/bond0/mtu
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/linux/mtu/1.png?raw=true" alt="案例1"></p>
+<pre><code>如果网卡没有做bond绑定：cat /sys/class/net/eth0/mtu
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/linux/mtu/2.png?raw=true" alt="案例2"></p>
+<h4 id="修改mtu的值"><a href="#修改mtu的值" class="headerlink" title="修改mtu的值"></a>修改mtu的值</h4><pre><code>1.临时修改。重启就会失效
+ifconfig ${Interface} mtu ${SIZE} up
+例如 ifconfig etho mtu 1450 up
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/linux/mtu/3.png?raw=true" alt="案例3">   </p>
+<pre><code>2.加载到开机启动项中
+  chmod +x /etc/rc.d/rc.local
+  echo ifconfig etho mtu 1450 up &gt;&gt; /etc/rc.d/rc.local
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/linux/mtu/4.png?raw=true" alt="案例4"></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><ul>
+<li><a href="https://www.cyberciti.biz/faq/centos-rhel-redhat-fedora-debian-linux-mtu-size/" target="_blank" rel="external">MTU官方站点</a></li>
+<li><a href="http://www.361way.com/linux-mtu-jumbo-frames/4055.html" target="_blank" rel="external">centos7MTU的修改</a></li>
+</ul>
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/04/27/file/" class="archive-article-date">
-		  <time datetime="2018-04-27T15:29:25.503Z" itemprop="datePublished">Apr 27, 2018</time>
-	  </a>
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/04/27/file/">python-shutil模块</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/04/03/Decorator/" class="archive-article-date">
-		  <time datetime="2018-04-03T14:01:00.000Z" itemprop="datePublished">Apr 03, 2018</time>
-	  </a>
+    </div>
+    <footer class="entry-meta entry-footer">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/04/03/Decorator/">装饰器</a>
-    </h1>
-  
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/RedHat/">RedHat</a>
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/22/process/" class="archive-article-date">
-		  <time datetime="2018-01-22T06:23:43.000Z" itemprop="datePublished">Jan 22, 2018</time>
-	  </a>
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/process/">process for python</a>
-    </h1>
-  
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-MTU/">centos(MTU)</a></li></ul>
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/13/index/" class="archive-article-date">
-		  <time datetime="2018-01-13T09:14:56.000Z" itemprop="datePublished">Jan 13, 2018</time>
-	  </a>
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/13/index/">md操作</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/08/mtu/" class="archive-article-date">
-		  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">Jan 08, 2018</time>
-	  </a>
+            
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/mtu/">CENTOS-MTU</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
+  
 </article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
 
-      <a href="/2018/01/08/centos1/" class="archive-article-date">
-		  <time datetime="2018-01-08T08:37:05.000Z" itemprop="datePublished">Jan 08, 2018</time>
-	  </a>
-      
+<!-- Table of Contents -->
+
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/centos1/">centos</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/05/readme/" class="archive-article-date">
-		  <time datetime="2018-01-05T14:18:21.000Z" itemprop="datePublished">Jan 05, 2018</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/readme/">readme</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		  
-		    </div></section>
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2017/11/11/pyexcept/" class="archive-article-date">
-		  <time datetime="2017-11-11T14:18:21.000Z" itemprop="datePublished">Nov 11, 2017</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2017/11/11/pyexcept/">pyexcept</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2017/10/31/Timer/" class="archive-article-date">
-		  <time datetime="2017-10-31T11:36:30.000Z" itemprop="datePublished">Oct 31, 2017</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2017/10/31/Timer/">python启动定时任务</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2017/10/29/blue/" class="archive-article-date">
-		  <time datetime="2017-10-29T15:06:44.000Z" itemprop="datePublished">Oct 29, 2017</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2017/10/29/blue/">blue</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2017/10/29/hello/" class="archive-article-date">
-		  <time datetime="2017-10-29T14:40:00.000Z" itemprop="datePublished">Oct 29, 2017</time>
-	  </a>
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2017/10/29/hello/">知名网站</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-
-	
-		</div></section>
-	
-
 
 
 </section>
