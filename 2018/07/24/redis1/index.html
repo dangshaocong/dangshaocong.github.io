@@ -13,25 +13,25 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>知名网站 | think and code</title>
+  <title>redis数据结构 | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="知名网站" />
+  <meta name="keywords" content="异常处理" />
   
   
   
   
-  <meta name="description" content="常用网站1.百度2.知乎3.github4.stackoverflow5.中国开源社区6.编码工具">
-<meta name="keywords" content="知名网站">
+  <meta name="description" content="redis Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。Redis 与其他 key - value 缓存产品有以下三个特点：1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。  列表">
+<meta name="keywords" content="异常处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="知名网站">
-<meta property="og:url" content="http://yoursite.com/2017/10/29/hello/index.html">
+<meta property="og:title" content="redis数据结构">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/redis1/index.html">
 <meta property="og:site_name" content="think and code">
-<meta property="og:description" content="常用网站1.百度2.知乎3.github4.stackoverflow5.中国开源社区6.编码工具">
-<meta property="og:updated_time" content="2018-01-08T06:31:32.568Z">
+<meta property="og:description" content="redis Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。Redis 与其他 key - value 缓存产品有以下三个特点：1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。  列表">
+<meta property="og:updated_time" content="2018-07-23T16:28:30.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知名网站">
-<meta name="twitter:description" content="常用网站1.百度2.知乎3.github4.stackoverflow5.中国开源社区6.编码工具">
+<meta name="twitter:title" content="redis数据结构">
+<meta name="twitter:description" content="redis Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。Redis 与其他 key - value 缓存产品有以下三个特点：1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。  列表">
   
     <link rel="alternate" href="/atom.xml" title="think and code" type="application/atom+xml">
   
@@ -167,7 +167,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-hello" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-redis1" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -175,7 +175,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      知名网站
+      redis数据结构
     </h1>
   
 
@@ -183,8 +183,8 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2017/10/29/hello/" class="article-date">
-	  <time datetime="2017-10-29T14:40:00.000Z" itemprop="datePublished">October 29, 2017</time>
+	Posted on <a href="/2018/07/24/redis1/" class="article-date">
+	  <time datetime="2018-07-23T16:27:00.000Z" itemprop="datePublished">July 24, 2018</time>
 	</a>
 
       
@@ -195,15 +195,34 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h1><p>1.<a href="http://www.baidu.com" target="_blank" rel="external">百度</a><br>2.<a href="http://www.zhihu.com" target="_blank" rel="external">知乎</a><br>3.<a href="http://github.com" target="_blank" rel="external">github</a><br>4.<a href="https://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a><br>5.<a href="http://www.oschina.net/" target="_blank" rel="external">中国开源社区</a><br>6.<a href="http://tool.chinaz.com/Tools/Unicode.aspx" target="_blank" rel="external">编码工具</a></p>
+        <h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><hr>
+<p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。<br>Redis 与其他 key - value 缓存产品有以下三个特点：<br>1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。<br>2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</p>
+<ol>
+<li><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4></li>
+</ol>
+<blockquote>
+<p>列表详常见的操作：<br>  可以用空格分开一次插入多个值<br>  lpush key value 向列表的前面插入（lpushx 当健存在时才插入）<br>  rpush key value 向列表的后面插入 (rpushx 当健存在时才插入)<br>  lindex key index 根据索引获取列表的健<br>  lrange key start stop 获取从索引start开始到stop为止的范围内的内容</p>
+</blockquote>
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><blockquote>
+<p>向集合中添加元素<br>  sadd movie the first world 向集合中一次添加三个元素。<br>  scard movie 获取set中的成员个数<br>  smembers movie 获取set中的元素。<br>  spop movie 2 随机从集合中弹出两个元素。<br>  sismember age movie 判断是否是set的成员。</p>
+</blockquote>
+<h4 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h4><blockquote>
+<p>zadd sql 1 redis 向有序集合添加元素。这里需要给个分数<br>  zcard sql 获取有序集合的成员数<br>  zconut sql 1 2 获取分数在1-2之间的成员个数<br>  zrank sql memcache 获取成员的索引，如果没有返回 nil<br>  zrange sql 0 10 withscores 进行打分。</p>
+</blockquote>
+<h4 id="hyperloglog"><a href="#hyperloglog" class="headerlink" title="hyperloglog"></a>hyperloglog</h4><blockquote>
+<p>1.Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。<br>2.在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。<br>但是，因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素.</p>
+</blockquote>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/redis数据库/">redis数据库</a>
+
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知名网站/">知名网站</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异常处理/">异常处理</a></li></ul>
 
       
         <div id="donation_div"></div>
@@ -251,15 +270,11 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2017/10/29/blue/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          blue
-        
-      </div>
-    </a>
   
+    <a href="/2018/06/21/mtu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CENTOS-MTU</div>
+    </a>
   
 </nav>
 
@@ -272,7 +287,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用网站"><span class="nav-number">1.</span> <span class="nav-text">常用网站</span></a></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis"><span class="nav-number">1.</span> <span class="nav-text">redis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有序集合"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">有序集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hyperloglog"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">hyperloglog</span></a></li></ol></li></ol></li></ol></li></ol>
     
     </div>
   </aside>
