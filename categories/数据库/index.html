@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>archiv | think and code</title>
+  <title>kategorie: 数据库 | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="think and code">
-<meta property="og:url" content="http://yoursite.com/archives/page/5/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/数据库/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -164,74 +164,75 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 16 posts in total till now.</span></blockquote>
-
-
-
-
-	<!-- 分页显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/22/process/" class="archive-article-date">
-		  <time datetime="2018-01-22T06:23:43.000Z" itemprop="datePublished">Jan 22, 2018</time>
-	  </a>
-      
+  
+    <article id="post-redis1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/22/process/">process for python</a>
+      <a class="article-title" href="/2018/07/24/redis1/">redis数据结构</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/01/13/index/" class="archive-article-date">
-		  <time datetime="2018-01-13T09:14:56.000Z" itemprop="datePublished">Jan 13, 2018</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/01/13/index/">md操作</a>
-    </h1>
-  
+	Posted on <a href="/2018/07/24/redis1/" class="article-date">
+	  <time datetime="2018-07-23T16:27:00.000Z" itemprop="datePublished">July 24, 2018</time>
+	</a>
 
-    </header>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><hr>
+<p>Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-value数据库。<br>Redis 与其他 key - value 缓存产品有以下三个特点：<br>1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。<br>2.Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</p>
+<ol>
+<li><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4></li>
+</ol>
+<blockquote>
+<p>列表详常见的操作：<br>  可以用空格分开一次插入多个值<br>  lpush key value 向列表的前面插入（lpushx 当健存在时才插入）<br>  rpush key value 向列表的后面插入 (rpushx 当健存在时才插入)<br>  lindex key index 根据索引获取列表的健<br>  lrange key start stop 获取从索引start开始到stop为止的范围内的内容</p>
+</blockquote>
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><blockquote>
+<p>向集合中添加元素<br>  sadd movie the first world 向集合中一次添加三个元素。<br>  scard movie 获取set中的成员个数<br>  smembers movie 获取set中的元素。<br>  spop movie 2 随机从集合中弹出两个元素。<br>  sismember age movie 判断是否是set的成员。</p>
+</blockquote>
+<h4 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h4><blockquote>
+<p>zadd sql 1 redis 向有序集合添加元素。这里需要给个分数<br>  zcard sql 获取有序集合的成员数<br>  zconut sql 1 2 获取分数在1-2之间的成员个数<br>  zrank sql memcache 获取成员的索引，如果没有返回 nil<br>  zrange sql 0 10 withscores 进行打分。</p>
+</blockquote>
+<h4 id="hyperloglog"><a href="#hyperloglog" class="headerlink" title="hyperloglog"></a>hyperloglog</h4><blockquote>
+<p>1.Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。<br>2.在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。<br>但是，因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素.</p>
+</blockquote>
+<p>什么是基数呢？</p>
+<blockquote>
+<p>比如数据集 {1, 3, 5, 7, 5, 7, 8}， 那么这个数据集的基数集为 {1, 3, 5 ,7, 8}, 基数(不重复元素)为5。<br>pfadd log “error” 添加一个到数据集<br>pfcount log 获取统计log健的基数<br>PFMERGE destkey sourcekey 将两个hyperlog合并成一个。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-	
-	
-		</div></section>
-	
 
-	<!-- 页数指示器 -->
-	
-	  <nav id="page-nav">
-	    
-	    <a class="extend prev" rel="prev" href="/archives/page/4/">zurück</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/6/">weiter</a>
-	  </nav>
-	
+<!-- Table of Contents -->
 
+  
 
 
 </section>
