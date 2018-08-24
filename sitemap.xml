@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/08/24/glob/</loc>
+    
+    <lastmod>2018-08-24T15:18:00.838Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
+    
+    <lastmod>2018-07-25T01:36:01.907Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/07/24/redis1/</loc>
     
-    <lastmod>2018-07-24T08:24:25.983Z</lastmod>
+    <lastmod>2018-07-24T08:27:49.082Z</lastmod>
     
   </url>
   
@@ -89,13 +103,6 @@
     <loc>http://yoursite.com/2018/01/22/process/</loc>
     
     <lastmod>2018-04-04T08:50:08.589Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
-    
-    <lastmod>2018-04-04T08:47:35.870Z</lastmod>
     
   </url>
   

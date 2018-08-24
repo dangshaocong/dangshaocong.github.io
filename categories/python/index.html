@@ -165,6 +165,78 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-glob"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/08/24/glob/">python模块之glob</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/08/24/glob/" class="article-date">
+	  <time datetime="2018-08-24T15:09:00.000Z" itemprop="datePublished">August 24, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python之glob模块那点事儿"><a href="#python之glob模块那点事儿" class="headerlink" title="python之glob模块那点事儿"></a>python之glob模块那点事儿</h1><hr>
+<h3 id="glob的背景"><a href="#glob的背景" class="headerlink" title="glob的背景"></a>glob的背景</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">glob是python内置的一个模块，用他可以很方便的查找文件。匹配需要的文件。查找符合规则的文件，路径名。和使用windows下的搜索文件路径名一样。</div></pre></td></tr></table></figure>
+<h3 id="glob的匹配符"><a href="#glob的匹配符" class="headerlink" title="glob的匹配符"></a>glob的匹配符</h3><pre><code>glob查找文件只用到3个匹配符号 * ？ [] 
+* 代表 0个或者多个字符
+？代表1个字符
+[] 代表的是查找的范围 如[0-9]匹配数字
+</code></pre><h3 id="glob模块的方法"><a href="#glob模块的方法" class="headerlink" title="glob模块的方法"></a>glob模块的方法</h3><h4 id="1-glob-glob"><a href="#1-glob-glob" class="headerlink" title="1.glob.glob()"></a>1.glob.glob()</h4><pre><code>该方法返回所有匹配的文件路径列表。该方法需要一个参数用来指定需要匹配的路径字符串（字符串可以为绝对路径也可以为相对路径）其中返回的文件路径列表只会返回当前路径中匹配到的。还是先上一段代码：
+
+import glob
+file=glob.glob(r&apos;*.py&apos;) #列出当前路径所匹配的所有的.py的文件 
+file1=glob.glob(r&apos;C:\Users\admin\Pictures\Saved Pictures\*.jpg&apos;)  # 这里是去绝对路径里面去寻找
+## 上面的返回都是一个list
+</code></pre><p>  <img src="https://github.com/dangshaocong/pictures/blob/master/python/glob/GIF1.gif?raw=true" alt="案例1"></p>
+<h4 id="2-glob-iglob"><a href="#2-glob-iglob" class="headerlink" title="2.glob.iglob()"></a>2.glob.iglob()</h4><pre><code>获取一个迭代器（iterator ）对象，使用它可以逐个获取匹配的文件路径名。与glob.glob()的区别是一次只获取一个文件路径名。而glob.glob()一次获取所有的匹配的文件名。接着上代码
+
+  import glob
+  filelist=glob.iglob(r&apos;*.py&apos;)
+  print filelist # &lt;generator object iglob at 0x02DA9FD0&gt;
+  for file in filelist:
+      print file       #一次只返回一个
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/glob/GIF2.gif?raw=true" alt="案例2"></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://docs.python.org/2/library/glob.html" target="_blank" rel="external">python2 glob官方文档</a></li>
+<li><a href="https://docs.python.org/3.5/library/glob.html" target="_blank" rel="external">python3 glob文档</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python文件查找库glob/">python文件查找库glob</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-yaml"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -263,157 +335,6 @@ print yaml.dump(yaml.load(document))
       
   <span class="ico-tags"></span>
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-pythonunittest"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/06/09/pythonunittest/">python单元测试-unittest</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2018/06/09/pythonunittest/" class="article-date">
-	  <time datetime="2018-06-09T02:42:00.000Z" itemprop="datePublished">June 9, 2018</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="python-单元测试-unittest的使用"><a href="#python-单元测试-unittest的使用" class="headerlink" title="python 单元测试 unittest的使用"></a>python 单元测试 unittest的使用</h2><hr>
-<h3 id="一。什么是unittest"><a href="#一。什么是unittest" class="headerlink" title="一。什么是unittest"></a>一。什么是unittest</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">单元测试是用来对一个模块、一个函数或者一个类来进行正确性检验的测试工作。</div></pre></td></tr></table></figure>
-<h3 id="二。unittest的核心工作模块"><a href="#二。unittest的核心工作模块" class="headerlink" title="二。unittest的核心工作模块"></a>二。unittest的核心工作模块</h3><h4 id="test-case-test-suite-test-runner-test-fixture。TextTestRunner-HTMLTestRunner-输出html的文件格式"><a href="#test-case-test-suite-test-runner-test-fixture。TextTestRunner-HTMLTestRunner-输出html的文件格式" class="headerlink" title="test case, test suite, test runner, test fixture。TextTestRunner,HTMLTestRunner(输出html的文件格式)"></a>test case, test suite, test runner, test fixture。TextTestRunner,HTMLTestRunner(输出html的文件格式)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">一个class继承了unittest.TestCase，便是一个测试用例，但如果其中有多个以 test 开头的方法，那么每有一个这样的方法，在load的时候便会生成一个TestCase实例，如：一个class中有四个test_xxx方法，最后在load到suite中时也有四个测试用例。    </div><div class="line"></div><div class="line">写好TestCase，然后由TestLoader加载TestCase到TestSuite，然后由TextTestRunner来运行TestSuite我们通过命令行或者unittest.main()执行时，main会调用TextTestRunner中的run来执行，或者我们可以直接通过TextTestRunner来执行用例。这里加个说明，在Runner执行时，默认将执行结果输出到控制台，我们可以设置其输出到文件，在文件中查看结果（你可能听说过HTMLTestRunner，是的，通过它可以将结果输出到HTML中，生成漂亮的报告，它跟TextTestRunner是一样的，从名字就能看出来，这个我们后面再说）。</div></pre></td></tr></table></figure>
-<h3 id="三。看下面的实例"><a href="#三。看下面的实例" class="headerlink" title="三。看下面的实例"></a>三。看下面的实例</h3><pre><code>#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-import unittest
-# unittest.TestCase
-# 测试的标识成功是 . 失败是 F ,跳过是s 出错是E
-def add(a,b):
-    return a+b
-def minus(a,b):
-    return a-b
-def multi(a,b):
-    return a*b
-def divide(a,b):
-    return a/b
-class IntegerArimeticTest(unittest.TestCase):
-    &quot;&quot;&quot;docstring for IntegerArimeticTest&quot;&quot;&quot;
-    def testAdd(self):
-        &apos;&apos;&apos;test add function&apos;&apos;&apos;
-        self.assertEqual(3,add(1,2))
-
-    def testminus(self):
-        self.assertNotEqual(2,minus(4,1))
-    def testmulti(self):
-        self.assertEqual(25,multi(5,5))
-    def testdivide(self):
-        &apos;&apos;&apos;test divide function&apos;&apos;&apos;
-        self.assertEqual(2,divide(5,2))
-if __name__ == &apos;__main__&apos;:
-    unittest.main(verbosity=2)  #  会调用TextTestRunner中的run方法来运行testsuite
-</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1.测试的顺序不一定是按照类中定义的方法顺序</div><div class="line">2.类中的每个方法都要以test开头，否则不会被unittest类识别</div><div class="line">3.在unittest.main()中加 verbosity 参数可以控制输出的错误报告的详细程度，默认是 1，如果设为 0，则不输出每一用例的执行结果，</div><div class="line">4.类中的docstring是非常有用的，在测试过程中可以看到详细的测试方法。</div></pre></td></tr></table></figure>
-<p>  <img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF.gif?raw=true" alt="案例1"><br>  <img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF1.gif?raw=true" alt="案例2"><br>  <img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF2.gif?raw=true" alt="案例3"></p>
-<h3 id="四。组织testsuite"><a href="#四。组织testsuite" class="headerlink" title="四。组织testsuite"></a>四。组织testsuite</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  上面的代码示例了如何编写一个简单的测试，但有两个问题，</div><div class="line">1.我们怎么控制用例执行的顺序呢？（这里的示例中的几个测试方法并没有一定关系，但之后你写的用例可能会有先后关系，需要先执行方法A，再执行方法B），我们就要用到TestSuite了。我们添加到TestSuite中的case是会按照添加的顺序执行的。     </div><div class="line">2.是我们现在只有一个测试文件，我们直接执行该文件即可，但如果有多个测试文件，怎么进行组织，总不能一个个文件执行吧，答案也在TestSuite中。</div></pre></td></tr></table></figure>
-<pre><code>下面的代码：
-suit=unittest.TestSuite()
-tests=[IntegerArimeticTest(&quot;testAdd&quot;),IntegerArimeticTest(&quot;testminus&quot;),IntegerArimeticTest(&quot;testmulti&quot;),IntegerArimeticTest(&quot;testdivide&quot;)]
-suit.addTests(tests)
-runner=unittest.TextTestRunner(verbosity=2)
-runner.run(suit)
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF3.gif?raw=true" alt="案例4"></p>
-<h5 id="如果将测试用例加到Testsuit中那么执行的顺序就是按照加入的顺序执行的"><a href="#如果将测试用例加到Testsuit中那么执行的顺序就是按照加入的顺序执行的" class="headerlink" title="如果将测试用例加到Testsuit中那么执行的顺序就是按照加入的顺序执行的"></a>如果将测试用例加到Testsuit中那么执行的顺序就是按照加入的顺序执行的</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">上面用了TestSuite的 addTests()   方法，并直接传入了TestCase列表，我们还可以：</div></pre></td></tr></table></figure>
-<pre><code># 直接用addTest方法添加单个TestCase
-suite.addTest(TestMathFunc(&quot;test_multi&quot;))
-# 用addTests + TestLoader
-# loadTestsFromName()，传入&apos;模块名.TestCase名&apos;
-suite.addTests(unittest.TestLoader().loadTestsFromName(&apos;test_mathfunc.TestMathFunc&apos;))
-suite.addTests(unittest.TestLoader().loadTestsFromNames([&apos;test_mathfunc.TestMathFunc&apos;]))  # loadTestsFromNames()，类似，传入列表
-# loadTestsFromTestCase()，传入TestCase
-suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestMathFunc))
-用TestLoader的方法是无法对case进行排序的
-</code></pre><h3 id="五。将结果输出到文件"><a href="#五。将结果输出到文件" class="headerlink" title="五。将结果输出到文件"></a>五。将结果输出到文件</h3><hr>
-<p>用例组织好了，但结果只能输出到控制台，这样没有办法查看之前的执行记录，我们想将结果输出到文件。很简单，看示例：</p>
-<pre><code>suit=unittest.TestSuite()
-tests=[IntegerArimeticTest(&quot;testAdd&quot;),IntegerArimeticTest(&quot;testminus&quot;),IntegerArimeticTest(&quot;testmulti&quot;),IntegerArimeticTest(&quot;testdivide&quot;)]
-suit.addTests(tests)
-with open(&apos;UnittestTextReport.txt&apos;, &apos;a&apos;) as f:
-    runner=unittest.TextTestRunner(stream=f,verbosity=2)
-    runner.run(suit)
-</code></pre><p>runner=unittest.TextTestRunner(stream=f,verbosity=2)这个是关键。所有程序的执行均输出到此文件，接下来就有测试报告了。</p>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF4.gif?raw=true" alt="案例5"></p>
-<h3 id="六。test-fixture之setUp-tearDown"><a href="#六。test-fixture之setUp-tearDown" class="headerlink" title="六。test fixture之setUp() tearDown()"></a>六。test fixture之setUp() tearDown()</h3><blockquote>
-<p>上面整个测试基本跑下来了，但可能会有点特殊情况。比如每次执行之前准备环境，或者在每次执行完成后进行清理。总不能每个方法都添加准备环境，清理环境的代码吧。这就涉及到之前的test fixture</p>
-</blockquote>
-<pre><code>def setUp(self):
-    print &quot;do something before test.Prepare environment.&quot;
-def tearDown(self):
-    print &quot;do something after test.Clean up.&quot;
-加入setUp和tearDown表示在执行每个测试用例之前与之后都要执行的操作
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF5.gif?raw=true" alt="案例6"><br>如果想要在所有的测试用例之前执行之前检查一次，在执行所有的用例之后执行一次就可使用下面的代码</p>
-<pre><code>@classmethod
-def setUpClass(cls):
-    print &quot;firstly this setUpclass() only called once&quot;
-@classmethod
-def tearDownClass(cls):
-    print &quot;finally:This tearDownClass() method only called once too.&quot;
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF6.gif?raw=true" alt="案例7">      </p>
-<h3 id="七。跳过某个case"><a href="#七。跳过某个case" class="headerlink" title="七。跳过某个case"></a>七。跳过某个case</h3><p>如果我们临时想要跳过某个case,unittest也提供了几个方法<br>1.skip装饰器</p>
-<pre><code>@unittest.skip(&quot;i do not want to run this case&quot;)
-def testdivide(self):
-    print &quot;test divide&quot;
-    &apos;&apos;&apos;test divide function&apos;&apos;&apos;
-    self.assertEqual(2,divide(5,2))
-    self.assertEqual(1,divide(2,2))
-</code></pre><blockquote>
-<p> 将会跳过这个测试用例执行下面的。但是还是可以看到总的skip数量  是 4个但都是divide被跳过了。skip装饰器一共有三个 unittest.skip(reason)、unittest.skipIf(condition,  reason)、unittest.skipUnless(condition,  reason)，skip无条件跳过，skipIf当condition为True时跳过，skipUn less当condition为False时跳过。</p>
-</blockquote>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF7.gif?raw=true" alt="案例8"></p>
-<p>2.除了装饰器，也可以用skipTest()</p>
-<pre><code>def testmulti(self):
-    self.skipTest(&quot;do not run this&quot;)
-    print &quot;test multi&quot;
-    self.assertEqual(25,multi(5,5)) 
-    也会跳过该case
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF8.gif?raw=true" alt="案例9">  </p>
-<h4 id="八。用HTMLTestRunner输出漂亮的HTML报告"><a href="#八。用HTMLTestRunner输出漂亮的HTML报告" class="headerlink" title="八。用HTMLTestRunner输出漂亮的HTML报告"></a>八。用HTMLTestRunner输出漂亮的HTML报告</h4><blockquote>
-<p>需要外部的库生成html的报告<br> <a href="http://tungwaiyip.info/software/HTMLTestRunner.html" target="_blank" rel="external">http://tungwaiyip.info/software/HTMLTestRunner.html</a><br> 下载后放到python/lib目录下面<br> 或者放到当前文件夹下面</p>
-</blockquote>
-<pre><code>from HTMLTestRunner import *
-with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
-    runner=HTMLTestRunner(stream=f,title=&apos;MathFunc Test  Report&apos;,description=&apos;generated by HTMLTestRunner.&apos;,verbosity=2)
-    runner.run(suit)
-    将测试结果输出到html里面。
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/unittest/GIF9.gif?raw=true" alt="案例10"></p>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python自动化测试/">python自动化测试</a></li></ul>
 
       
             
@@ -534,6 +455,18 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/08/24/glob/">python模块之glob</a></h6>
+              <span>August 24, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/07/24/redis1/">redis数据结构</a></h6>
               <span>July 24, 2018</span>
             </div>
@@ -588,18 +521,6 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/05/28/short/">git,scp,rsync</a></h6>
-              <span>May 28, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -609,7 +530,7 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
   <div class="widget-wrap">
     <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -619,7 +540,7 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-MTU/">centos(MTU)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-MTU/">centos(MTU)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python文件查找库glob/">python文件查找库glob</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -629,7 +550,7 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/centos-MTU/" style="font-size: 10px;">centos(MTU)</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
+      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/centos-MTU/" style="font-size: 10px;">centos(MTU)</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python文件查找库glob/" style="font-size: 10px;">python文件查找库glob</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
     </div>
   </div>
 
@@ -639,7 +560,7 @@ with open(&apos;HtmlReport.html&apos;, &apos;w&apos;) as f:
     <h3 class="widget-title">Archiv</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 

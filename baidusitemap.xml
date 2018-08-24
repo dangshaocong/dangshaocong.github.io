@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/24/glob/</loc>
+    <lastmod>2018-08-24T15:18:00.838Z</lastmod>
+    <data>
+        <display>
+        <title>python模块之glob</title>
+        <pubTime>2018-08-24T15:09:00.000Z</pubTime>
+        
+        <tag>python文件查找库glob</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
+    <lastmod>2018-07-25T01:36:01.907Z</lastmod>
+    <data>
+        <display>
+        <title>pyexcept</title>
+        <pubTime>2017-11-11T14:18:21.000Z</pubTime>
+        
+        <tag>异常处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/07/24/redis1/</loc>
-    <lastmod>2018-07-24T08:24:25.983Z</lastmod>
+    <lastmod>2018-07-24T08:27:49.082Z</lastmod>
     <data>
         <display>
         <title>redis数据结构</title>
@@ -250,26 +290,6 @@
         <pubTime>2018-01-22T06:23:43.000Z</pubTime>
         
         <tag>多进程</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
-    <lastmod>2018-04-04T08:47:35.870Z</lastmod>
-    <data>
-        <display>
-        <title>pyexcept</title>
-        <pubTime>2017-11-11T14:18:21.000Z</pubTime>
-        
-        <tag>异常处理</tag>
          
          
            
