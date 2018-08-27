@@ -165,6 +165,123 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-genter"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/08/28/genter/">yield与生成器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/08/28/genter/" class="article-date">
+	  <time datetime="2018-08-27T16:07:50.181Z" itemprop="datePublished">August 28, 2018</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python-生成器（yield）"><a href="#python-生成器（yield）" class="headerlink" title="python 生成器（yield）"></a>python 生成器（yield）</h1><hr>
+<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><blockquote>
+<p>为了理解yield,就首先要明白什么是生成器。可是要理解生成器需要知道什么是可迭代对象。因为yield就是生成器每次只会返回一个内容。</p>
+</blockquote>
+<h4 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h4><blockquote>
+<p>当我们创建一个字符串后可以逐项去读取每个字母。这叫做一个可迭代对象。</p>
+</blockquote>
+<pre><code>for c in &apos;hello&apos;:
+    print c
+</code></pre><blockquote>
+<p>再比如我们用列表推到式创建的列表也可以叫做可迭代对象</p>
+</blockquote>
+<pre><code>genter=[x*x for x in range(3)]
+for i in genter:
+    print (i)
+</code></pre><h4 id="生成器-1"><a href="#生成器-1" class="headerlink" title="生成器"></a>生成器</h4><blockquote>
+<p>生成器是可迭代的，我们只能读取它一次，因为它并不把所有的值放到内存中，它是实时生成数据。例如</p>
+</blockquote>
+<pre><code>genter=(x*x for x in range(3))
+for i in genter:
+    print (i)
+看起来似乎和上面的列表没有什么区别。但是确是一个生成器对象
+上面的可迭代器对象的列表可以反复调用for.但是我们的生成器只能迭代一次有效。即运行多次for只会有1次出现第一次的结果。
+</code></pre><h4 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h4><blockquote>
+<p>yield是个关键字。和函数里面的return差不多。只是返回的是一个生成器。看下下面的code:</p>
+</blockquote>
+<pre><code> def createGenerator():
+     mylist=range(3)
+     for i in mylist:
+        yield i*i
+gen=createGenerator()
+print (gen) #这里返回一个生成器对象&lt;generator object createGenerator at 0x02C464B8&gt;
+</code></pre><blockquote>
+<p>上面的例子并没有什么是实际的效果。目的就是只是知道系统会返回一堆只需要读取一次的内容。当调用函数的时候函数里面的代码并不是立马执行的。这个函数只是返回一个生成器对象。函数里面的代码只有当使用for循环的时候才会执行。</p>
+<h5 id="第一次迭代中你的函数会执行，从开始到达-yield-关键字，然后返回-yield-后的值作为第一次迭代的返回值-然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义-yield-关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足-if-else-条件。"><a href="#第一次迭代中你的函数会执行，从开始到达-yield-关键字，然后返回-yield-后的值作为第一次迭代的返回值-然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义-yield-关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足-if-else-条件。" class="headerlink" title="第一次迭代中你的函数会执行，从开始到达 yield 关键字，然后返回 yield 后的值作为第一次迭代的返回值. 然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义 yield 关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足 if/else 条件。"></a>第一次迭代中你的函数会执行，从开始到达 yield 关键字，然后返回 yield 后的值作为第一次迭代的返回值. 然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义 yield 关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足 if/else 条件。</h5></blockquote>
+<h4 id="yield-demo-Example"><a href="#yield-demo-Example" class="headerlink" title="yield demo Example"></a>yield demo Example</h4><pre><code> class Back(object):
+     crisis=False
+     def create_atm(self):
+        while not self.crisis:
+            yield &apos;$100&apos;
+hsb=Back()
+ns=hsb.create_atm()
+print (ns)
+print (ns.next())
+print (ns.next())
+print ([ns.next() for i in range(5)])
+hsb.crisis=True
+#print(ns.next())  # stopIteration 不满足条件
+ls=hsb.create_atm()   
+#print (ls.next())   # StopIteration
+# print &apos;*&apos;*20
+hsb.crisis=False #清空
+print (ns.next())
+bus=hsb.create_atm()
+for cash in bus:
+   print cash       #条件为真的一直执行下去
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/genter/GIF.gif?raw=true" alt="运行结果"></p>
+<h4 id="itertools"><a href="#itertools" class="headerlink" title="itertools"></a>itertools</h4><blockquote>
+<p>itertools包含很多的功能。复制迭代器，串联迭代器。嵌套的列表分组</p>
+</blockquote>
+<pre><code>import itertools
+horses = [1, 2, 3, 4]
+races = itertools.permutations(horses)
+print(races)
+print(list(itertools.permutations(horses))) #列表的排列组合
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/genter/dsc.png?raw=true" alt="运行结果"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyzh.readthedocs.io/en/latest/the-python-yield-keyword-explained.html" target="_blank" rel="external">感谢PYZH的blog</a></li>
+<li><a href="http://effbot.org/zone/python-for-statement.htm" target="_blank" rel="external">迭代器的内部机理</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生成器/">生成器</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-glob"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -237,121 +354,11 @@ file1=glob.glob(r&apos;C:\Users\admin\Pictures\Saved Pictures\*.jpg&apos;)  # �
 <!-- Table of Contents -->
 
   
-    <article id="post-yaml"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/06/20/yaml/">PyYaml</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	Posted on <a href="/2018/06/20/yaml/" class="article-date">
-	  <time datetime="2018-06-20T06:34:00.000Z" itemprop="datePublished">June 20, 2018</time>
-	</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h1><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">YAML是&quot;YAML Ain&apos;t a Markup  Language&quot;（YAML不是一种置标语言）的递归缩写。</div></pre></td></tr></table></figure>
-<h4 id="1-yaml的功能"><a href="#1-yaml的功能" class="headerlink" title="1.yaml的功能"></a>1.yaml的功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yaml的语法和其他高阶语言类似，并且可以简单表达清单、散列表，标量等资料形态。</div><div class="line"></div><div class="line">1.其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构中会变得复杂而难以辨认。</div><div class="line"></div><div class="line">2.它使用空白符号缩排和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种设定档、倾印除错内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。</div></pre></td></tr></table></figure>
-<h4 id="2-yaml的使用场景"><a href="#2-yaml的使用场景" class="headerlink" title="2.yaml的使用场景"></a>2.yaml的使用场景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1.脚本语言</div><div class="line">实现简单，解析成本低，yaml适合在脚本语言中使用</div><div class="line"></div><div class="line">2.序列化</div><div class="line">这种yaml序列化是优于json的，因为它是宿主语言数据类型直转的</div><div class="line"></div><div class="line">3.配置文件</div><div class="line">yaml可以做配置文件，比xml配置方便的多，比ini文件的功能强大</div><div class="line">由于兼容性问题，不同语言间的数据流转建议不要用YAML.</div></pre></td></tr></table></figure>
-<h4 id="3-yaml的文件格式"><a href="#3-yaml的文件格式" class="headerlink" title="3.yaml的文件格式"></a>3.yaml的文件格式</h4><pre><code>name: Tom Smith
-age: 37
-spouse:
-    name: Jane Smith
-    age: 25
-children:
- - name: Jimmy Smith
-   age: 15
- - name1: Jenny Smith
-   age1: 12
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">它的基本语法规则如下。</div><div class="line">1.大小写敏感</div><div class="line">2.使用缩进表示层级关系</div><div class="line">3.缩进时不允许使用Tab键，只允许使用空格。</div><div class="line">4.缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</div><div class="line"></div><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略</div><div class="line">yaml的数据结构有3种，</div><div class="line">对象：哈希，键值，映射。</div><div class="line">数组</div><div class="line">纯量：不可拆分的值（字符串，数字，布尔，日期，浮点，时间）</div></pre></td></tr></table></figure>
-<h4 id="4-python解析yaml"><a href="#4-python解析yaml" class="headerlink" title="4.python解析yaml"></a>4.python解析yaml</h4><ol>
-<li><p>准备yaml文件，随便编写</p>
-<p>name: mino<br>age: 23<br>spouse:<br>  name: range<br>  age: 10<br>children:</p>
-<ul>
-<li>name: haha<br>age: 20</li>
-<li>name1: move<br>age1: 15</li>
-</ul>
-</li>
-</ol>
-<p>2.编写python解析</p>
-<blockquote>
-<p>首先pip install pyaml </p>
-</blockquote>
-<pre><code># -*- coding:utf-8 -*-
-import yaml
-import os
-filename=os.path.join(os.path.dirname(__file__),&apos;main.yaml&apos;).replace(&apos;\\&apos;,&apos;/&apos;)
-with open(filename,&apos;r&apos;) as f:
-    y=yaml.load(f)
-    print y
-
-
-document = &apos;&apos;&apos;
-name: Vorlin Laruknuzum
-sex: Male
-class: Priest
-title: Acolyte
-hp: [32, 71]
-sp: [1, 13]
-gold: 423
-inventory:
-- a Holy Book of Prayers (Words of Wisdom)
-- an Azure Potion of Cure Light Wounds
-- a Silver Wand of Wonder
-&apos;&apos;&apos;
-#yaml.load_all()返回一个迭代器
-with open(&quot;./test.yaml&quot;,&quot;w&quot;) as fw:
-    yaml.dump(yaml.load(document),fw)
-
-for data in yaml.load_all(document):
-    print data
-print yaml.dump(yaml.load(document))
-</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF.gif?raw=true" alt="案例1"></p>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/python/yaml/GIF1.gif?raw=true" alt="案例2"></p>
-<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
-<li><a href="https://pyyaml.org/wiki/PyYAMLDocumentation" target="_blank" rel="external">PyYaml</a></li>
-<li><a href="https://github.com/yaml/pyyaml" target="_blank" rel="external">PyYaml源码</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="entry-meta entry-footer">
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python解析yaml/">python解析yaml</a></li></ul>
-
-      
-            
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/categories/python/page/2/">2</a><a class="page-number" href="/categories/python/page/3/">3</a><a class="page-number" href="/categories/python/page/4/">4</a><a class="extend next" rel="next" href="/categories/python/page/2/">weiter</a>
+    <span class="page-number current">1</span><a class="page-number" href="/categories/python/page/2/">2</a><a class="page-number" href="/categories/python/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/categories/python/page/5/">5</a><a class="extend next" rel="next" href="/categories/python/page/2/">weiter</a>
   </nav>
 
 </section>
@@ -455,6 +462,18 @@ print yaml.dump(yaml.load(document))
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2018/08/28/genter/">yield与生成器</a></h6>
+              <span>August 28, 2018</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2018/08/24/glob/">python模块之glob</a></h6>
               <span>August 24, 2018</span>
             </div>
@@ -509,18 +528,6 @@ print yaml.dump(yaml.load(document))
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2018/05/29/vue01/">Vue-初始</a></h6>
-              <span>May 29, 2018</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -530,7 +537,7 @@ print yaml.dump(yaml.load(document))
   <div class="widget-wrap">
     <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/RedHat/">RedHat</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端（vue）/">前端（vue）</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -540,7 +547,7 @@ print yaml.dump(yaml.load(document))
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-MTU/">centos(MTU)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python文件查找库glob/">python文件查找库glob</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-yum/">centos yum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-MTU/">centos(MTU)</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python文件查找库glob/">python文件查找库glob</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python自动化测试/">python自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python解析yaml/">python解析yaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多进程/">多进程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发需求/">工具开发需求</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/引入图片/">引入图片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件操作-shutil高级模块/">文件操作-shutil高级模块</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生成器/">生成器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知名网站/">知名网站</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/装饰器的使用/">装饰器的使用</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -550,7 +557,7 @@ print yaml.dump(yaml.load(document))
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/centos-MTU/" style="font-size: 10px;">centos(MTU)</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python文件查找库glob/" style="font-size: 10px;">python文件查找库glob</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
+      <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/centos-yum/" style="font-size: 10px;">centos yum</a> <a href="/tags/centos-MTU/" style="font-size: 10px;">centos(MTU)</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python启动定时任务/" style="font-size: 10px;">python启动定时任务</a> <a href="/tags/python文件查找库glob/" style="font-size: 10px;">python文件查找库glob</a> <a href="/tags/python自动化测试/" style="font-size: 10px;">python自动化测试</a> <a href="/tags/python解析yaml/" style="font-size: 10px;">python解析yaml</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/多进程/" style="font-size: 10px;">多进程</a> <a href="/tags/工具开发需求/" style="font-size: 10px;">工具开发需求</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/引入图片/" style="font-size: 10px;">引入图片</a> <a href="/tags/文件操作-shutil高级模块/" style="font-size: 10px;">文件操作-shutil高级模块</a> <a href="/tags/生成器/" style="font-size: 10px;">生成器</a> <a href="/tags/知名网站/" style="font-size: 10px;">知名网站</a> <a href="/tags/装饰器的使用/" style="font-size: 10px;">装饰器的使用</a>
     </div>
   </div>
 
@@ -560,7 +567,7 @@ print yaml.dump(yaml.load(document))
     <h3 class="widget-title">Archiv</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 

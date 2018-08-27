@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>kategorie: 前端（vue） | think and code</title>
+  <title>kategorie: python | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="think and code">
-<meta property="og:url" content="http://yoursite.com/categories/前端（vue）/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/python/page/5/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -165,7 +165,7 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-vue01"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Timer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -173,7 +173,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/05/29/vue01/">Vue-初始</a>
+      <a class="article-title" href="/2017/10/31/Timer/">python启动定时任务</a>
     </h1>
   
 
@@ -181,55 +181,32 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/05/29/vue01/" class="article-date">
-	  <time datetime="2018-05-28T16:56:44.935Z" itemprop="datePublished">May 29, 2018</time>
+	Posted on <a href="/2017/10/31/Timer/" class="article-date">
+	  <time datetime="2017-10-31T11:36:30.000Z" itemprop="datePublished">October 31, 2017</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="欢迎使用-vue"><a href="#欢迎使用-vue" class="headerlink" title="欢迎使用 vue"></a>欢迎使用 vue</h1><hr>
-<h3 id="Vue概述"><a href="#Vue概述" class="headerlink" title="Vue概述"></a>Vue概述</h3><blockquote>
-<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动</p>
-</blockquote>
-<h3 id="Vue是使用，引入。"><a href="#Vue是使用，引入。" class="headerlink" title="Vue是使用，引入。"></a>Vue是使用，引入。</h3><p>   可以使用cdn或者下载离线的vue</p>
-<pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
-生产环境优化https://cdn.jsdelivr.net/npm/vue
-</code></pre><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><blockquote>
-<p>轻量级的web应用，视图和业务完全分离。响应式，组件化。可扩展性极强。</p>
-</blockquote>
-<h3 id="入门实例"><a href="#入门实例" class="headerlink" title="入门实例"></a>入门实例</h3><ul>
-<li><p>声明式渲染 </p>
-<blockquote>
-<div id="app">  </div>
-
-</blockquote>
-</li>
-</ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF1.gif?raw=true" alt="案例1"></p>
-<ul>
-<li>条件与循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> &lt;div id=&quot;app-3&quot;&gt;</div><div class="line">   &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line"> </div><div class="line">var app3 = new Vue(&#123;</div><div class="line">   el: &apos;#app-3&apos;,</div><div class="line">    data: &#123;</div><div class="line">     seen: true</div><div class="line">   &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF2.gif?raw=true" alt="案例2"></p>
-<ul>
-<li><p>处理用户输入</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> &lt;div id=&quot;app5&quot;&gt;</div><div class="line">      &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</div><div class="line">      &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  var app5 = new Vue(&#123;</div><div class="line">     el: &apos;#app-5&apos;,</div><div class="line">    data: &#123;</div><div class="line">    message: &apos;Hello Vue.js!&apos;</div><div class="line">  &#125;,</div><div class="line">    methods: &#123;</div><div class="line">     reverseMessage: function () &#123;</div><div class="line">     this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">   &#125;</div><div class="line"> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF3.gif?raw=true" alt="案例3"></p>
+        <h3 id="python启动定时任务"><a href="#python启动定时任务" class="headerlink" title="python启动定时任务"></a>python启动定时任务</h3><h1 id="1-time模块"><a href="#1-time模块" class="headerlink" title="1.time模块"></a>1.time模块</h1><p><code>time.sleep(n)</code><br>例如下面的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def work(n):             - 每隔n 秒 输出 1到10之间的一个数</div><div class="line">  for i in range(10):</div><div class="line">      print i</div><div class="line">      time.sleep(n)</div></pre></td></tr></table></figure></p>
+<p>上面的实例是阻塞的，在sleep的时间内程序一直堵塞<br>详情请参考官方文档—–<a href="https://docs.python.org/2/library/time.html?sleep#time.sleep" target="_blank" rel="external">time.sleep</a></p>
+<h1 id="2-sched-模块"><a href="#2-sched-模块" class="headerlink" title="2.sched 模块"></a>2.sched 模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">  1.导入sched模块</div><div class="line">  import sched</div><div class="line">----------------------------------------------------------------------------------</div><div class="line">  2.创建scheduler对象</div><div class="line">  s = sched.scheduler(time.time, time.sleep)</div><div class="line">  - time.time:返回时间戳的函数</div><div class="line">  - time.sleep:可以在定时未到达之前阻塞</div><div class="line">------------------------------------------------------------------------------------</div><div class="line">  3.定义要执行的任务</div><div class="line">  def worker(n):</div><div class="line">        pass</div><div class="line">-------------------------------------------------------------------------------------</div><div class="line">  4.将任务添加到scheduler的盒子中</div><div class="line">  s.enter(delay,priority,action,arguments)</div><div class="line">  - delay:int /float型的表示多少秒后执行这个action任务</div><div class="line">  - priority:优先级表示当多个任务同时在一个时刻将执行优先执行那个任务</div><div class="line">    0优先级最高，数字越小优先级越高</div><div class="line">  - action: 执行的任务在上面的例子中也就是函数名worker</div><div class="line">  - arguments:参数列表以元组的形式如：(n,)</div><div class="line">    如果没有参数传入直接传空括号()</div><div class="line">--------------------------------------------------------------------------------------</div><div class="line">  5.运行任务</div><div class="line">  s.run()</div></pre></td></tr></table></figure>
+<p>在多线程环境中由于线程全局锁安全，一个任务没结束，就要等待也是阻塞的详细请查看官方库—-<a href="https://docs.python.org/2/library/sched.html" target="_blank" rel="external">sched</a></p>
+<h1 id="3-threading-Timer"><a href="#3-threading-Timer" class="headerlink" title="3.threading.Timer()"></a>3.threading.Timer()</h1><p>为了解决上面的阻塞问题，再多线程的环境中能够并发执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  1.导入模块</div><div class="line">  from threading import Timer</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  2.定义要执行的任务</div><div class="line">  def work(arg):</div><div class="line">        pass</div><div class="line">----------------------------------------------------------------------------------------</div><div class="line">  3.启动执行</div><div class="line">  Timer(delay, work, (arg)).start()</div><div class="line">  - 不需要区分优先级可以同时执行任务delay相同时就同时执行任务</div><div class="line">  -  delay:int /float型的表示多少秒后执行这个work任务</div><div class="line">  -  work: 执行任务的方法名字</div><div class="line">  -  arg:参数列表元祖(arg,)如果没有就是()</div></pre></td></tr></table></figure></p>
+<p>详情请参考官方文档：<a href="https://docs.python.org/2/library/sched.html?highlight=threading%20timer" target="_blank" rel="external">threading.Timer</a></p>
+<h1 id="4-更加高级的任务调度框架-apscheduler"><a href="#4-更加高级的任务调度框架-apscheduler" class="headerlink" title="4.更加高级的任务调度框架 apscheduler"></a>4.更加高级的任务调度框架 apscheduler</h1><p>   官方文档   <a href="http://apscheduler.readthedocs.io/en/latest/" target="_blank" rel="external">查看</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> 1.导入模块</div><div class="line">  from apscheduler.schedulers.blocking import BlockingScheduler</div><div class="line"></div><div class="line"> 2.初始化一个任务实例</div><div class="line">  sched = BlockingScheduler()</div><div class="line"></div><div class="line"> 3.添加作业任务</div><div class="line"> sched.add_job(my_job, &apos;interval&apos;, seconds=5)</div><div class="line">- my_job：作业任务</div><div class="line">-‘ interval ’  ‘cron ’等等</div><div class="line"></div><div class="line">4.启动任务</div><div class="line">  sched.start()</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/前端（vue）/">前端（vue）</a>
+    <a class="article-category-link" href="/categories/python/">python</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python启动定时任务/">python启动定时任务</a></li></ul>
 
       
             
@@ -243,6 +220,11 @@ var themeMenus = {};
 
   
 
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/categories/python/page/4/">zurück</a><a class="page-number" href="/categories/python/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/python/page/3/">3</a><a class="page-number" href="/categories/python/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
 
 </section>
           <aside id="sidebar">

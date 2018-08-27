@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/28/genter/</loc>
+    <lastmod>2018-08-27T16:17:36.223Z</lastmod>
+    <data>
+        <display>
+        <title>yield与生成器</title>
+        <pubTime>2018-08-27T16:07:50.181Z</pubTime>
+        
+        <tag>生成器</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/24/glob/</loc>
     <lastmod>2018-08-24T15:18:00.838Z</lastmod>
     <data>

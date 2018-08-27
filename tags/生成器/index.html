@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>kategorie: 前端（vue） | think and code</title>
+  <title>tag: 生成器 | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="think and code">
-<meta property="og:url" content="http://yoursite.com/categories/前端（vue）/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/生成器/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -165,7 +165,7 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-vue01"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-genter"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -173,7 +173,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2018/05/29/vue01/">Vue-初始</a>
+      <a class="article-title" href="/2018/08/28/genter/">yield与生成器</a>
     </h1>
   
 
@@ -181,55 +181,95 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2018/05/29/vue01/" class="article-date">
-	  <time datetime="2018-05-28T16:56:44.935Z" itemprop="datePublished">May 29, 2018</time>
+	Posted on <a href="/2018/08/28/genter/" class="article-date">
+	  <time datetime="2018-08-27T16:07:50.181Z" itemprop="datePublished">August 28, 2018</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="欢迎使用-vue"><a href="#欢迎使用-vue" class="headerlink" title="欢迎使用 vue"></a>欢迎使用 vue</h1><hr>
-<h3 id="Vue概述"><a href="#Vue概述" class="headerlink" title="Vue概述"></a>Vue概述</h3><blockquote>
-<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动</p>
+        <h1 id="python-生成器（yield）"><a href="#python-生成器（yield）" class="headerlink" title="python 生成器（yield）"></a>python 生成器（yield）</h1><hr>
+<h4 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h4><blockquote>
+<p>为了理解yield,就首先要明白什么是生成器。可是要理解生成器需要知道什么是可迭代对象。因为yield就是生成器每次只会返回一个内容。</p>
 </blockquote>
-<h3 id="Vue是使用，引入。"><a href="#Vue是使用，引入。" class="headerlink" title="Vue是使用，引入。"></a>Vue是使用，引入。</h3><p>   可以使用cdn或者下载离线的vue</p>
-<pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
-生产环境优化https://cdn.jsdelivr.net/npm/vue
-</code></pre><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><blockquote>
-<p>轻量级的web应用，视图和业务完全分离。响应式，组件化。可扩展性极强。</p>
+<h4 id="可迭代对象"><a href="#可迭代对象" class="headerlink" title="可迭代对象"></a>可迭代对象</h4><blockquote>
+<p>当我们创建一个字符串后可以逐项去读取每个字母。这叫做一个可迭代对象。</p>
 </blockquote>
-<h3 id="入门实例"><a href="#入门实例" class="headerlink" title="入门实例"></a>入门实例</h3><ul>
-<li><p>声明式渲染 </p>
-<blockquote>
-<div id="app">  </div>
-
+<pre><code>for c in &apos;hello&apos;:
+    print c
+</code></pre><blockquote>
+<p>再比如我们用列表推到式创建的列表也可以叫做可迭代对象</p>
 </blockquote>
-</li>
+<pre><code>genter=[x*x for x in range(3)]
+for i in genter:
+    print (i)
+</code></pre><h4 id="生成器-1"><a href="#生成器-1" class="headerlink" title="生成器"></a>生成器</h4><blockquote>
+<p>生成器是可迭代的，我们只能读取它一次，因为它并不把所有的值放到内存中，它是实时生成数据。例如</p>
+</blockquote>
+<pre><code>genter=(x*x for x in range(3))
+for i in genter:
+    print (i)
+看起来似乎和上面的列表没有什么区别。但是确是一个生成器对象
+上面的可迭代器对象的列表可以反复调用for.但是我们的生成器只能迭代一次有效。即运行多次for只会有1次出现第一次的结果。
+</code></pre><h4 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h4><blockquote>
+<p>yield是个关键字。和函数里面的return差不多。只是返回的是一个生成器。看下下面的code:</p>
+</blockquote>
+<pre><code> def createGenerator():
+     mylist=range(3)
+     for i in mylist:
+        yield i*i
+gen=createGenerator()
+print (gen) #这里返回一个生成器对象&lt;generator object createGenerator at 0x02C464B8&gt;
+</code></pre><blockquote>
+<p>上面的例子并没有什么是实际的效果。目的就是只是知道系统会返回一堆只需要读取一次的内容。当调用函数的时候函数里面的代码并不是立马执行的。这个函数只是返回一个生成器对象。函数里面的代码只有当使用for循环的时候才会执行。</p>
+<h5 id="第一次迭代中你的函数会执行，从开始到达-yield-关键字，然后返回-yield-后的值作为第一次迭代的返回值-然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义-yield-关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足-if-else-条件。"><a href="#第一次迭代中你的函数会执行，从开始到达-yield-关键字，然后返回-yield-后的值作为第一次迭代的返回值-然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义-yield-关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足-if-else-条件。" class="headerlink" title="第一次迭代中你的函数会执行，从开始到达 yield 关键字，然后返回 yield 后的值作为第一次迭代的返回值. 然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义 yield 关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足 if/else 条件。"></a>第一次迭代中你的函数会执行，从开始到达 yield 关键字，然后返回 yield 后的值作为第一次迭代的返回值. 然后，每次执行这个函数都会继续执行你在函数内部定义的那个循环的下一次，再返回那个值，直到没有可以返回的。如果生成器内部没有定义 yield 关键字，那么这个生成器被认为成空的。这种情况可能因为是循环进行没了，或者是没有满足 if/else 条件。</h5></blockquote>
+<h4 id="yield-demo-Example"><a href="#yield-demo-Example" class="headerlink" title="yield demo Example"></a>yield demo Example</h4><pre><code> class Back(object):
+     crisis=False
+     def create_atm(self):
+        while not self.crisis:
+            yield &apos;$100&apos;
+hsb=Back()
+ns=hsb.create_atm()
+print (ns)
+print (ns.next())
+print (ns.next())
+print ([ns.next() for i in range(5)])
+hsb.crisis=True
+#print(ns.next())  # stopIteration 不满足条件
+ls=hsb.create_atm()   
+#print (ls.next())   # StopIteration
+# print &apos;*&apos;*20
+hsb.crisis=False #清空
+print (ns.next())
+bus=hsb.create_atm()
+for cash in bus:
+   print cash       #条件为真的一直执行下去
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/genter/GIF.gif?raw=true" alt="运行结果"></p>
+<h4 id="itertools"><a href="#itertools" class="headerlink" title="itertools"></a>itertools</h4><blockquote>
+<p>itertools包含很多的功能。复制迭代器，串联迭代器。嵌套的列表分组</p>
+</blockquote>
+<pre><code>import itertools
+horses = [1, 2, 3, 4]
+races = itertools.permutations(horses)
+print(races)
+print(list(itertools.permutations(horses))) #列表的排列组合
+</code></pre><p><img src="https://github.com/dangshaocong/pictures/blob/master/python/genter/dsc.png?raw=true" alt="运行结果"></p>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><ul>
+<li><a href="https://pyzh.readthedocs.io/en/latest/the-python-yield-keyword-explained.html" target="_blank" rel="external">感谢PYZH的blog</a></li>
+<li><a href="http://effbot.org/zone/python-for-statement.htm" target="_blank" rel="external">迭代器的内部机理</a></li>
 </ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF1.gif?raw=true" alt="案例1"></p>
-<ul>
-<li>条件与循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> &lt;div id=&quot;app-3&quot;&gt;</div><div class="line">   &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;</div><div class="line"> &lt;/div&gt;</div><div class="line"> </div><div class="line">var app3 = new Vue(&#123;</div><div class="line">   el: &apos;#app-3&apos;,</div><div class="line">    data: &#123;</div><div class="line">     seen: true</div><div class="line">   &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF2.gif?raw=true" alt="案例2"></p>
-<ul>
-<li><p>处理用户输入</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> &lt;div id=&quot;app5&quot;&gt;</div><div class="line">      &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</div><div class="line">      &lt;button v-on:click=&quot;reverseMessage&quot;&gt;逆转消息&lt;/button&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  var app5 = new Vue(&#123;</div><div class="line">     el: &apos;#app-5&apos;,</div><div class="line">    data: &#123;</div><div class="line">    message: &apos;Hello Vue.js!&apos;</div><div class="line">  &#125;,</div><div class="line">    methods: &#123;</div><div class="line">     reverseMessage: function () &#123;</div><div class="line">     this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">   &#125;</div><div class="line"> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/dangshaocong/pictures/blob/master/GIF3.gif?raw=true" alt="案例3"></p>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
 	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/前端（vue）/">前端（vue）</a>
+    <a class="article-category-link" href="/categories/python/">python</a>
 
       
   <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/">VUE</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生成器/">生成器</a></li></ul>
 
       
             
