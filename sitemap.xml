@@ -4,7 +4,14 @@
   <url>
     <loc>http://yoursite.com/2018/10/24/mysqldetail/</loc>
     
-    <lastmod>2018-10-24T09:49:25.626Z</lastmod>
+    <lastmod>2018-10-24T11:37:16.078Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/07/24/redis1/</loc>
+    
+    <lastmod>2018-10-24T11:35:50.220Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2017/11/11/pyexcept/</loc>
     
     <lastmod>2018-07-25T01:36:01.907Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/07/24/redis1/</loc>
-    
-    <lastmod>2018-07-24T08:27:49.082Z</lastmod>
     
   </url>
   

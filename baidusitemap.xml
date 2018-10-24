@@ -5,13 +5,33 @@
     
   <url>
     <loc>http://yoursite.com/2018/10/24/mysqldetail/</loc>
-    <lastmod>2018-10-24T09:49:25.626Z</lastmod>
+    <lastmod>2018-10-24T11:37:16.078Z</lastmod>
     <data>
         <display>
         <title>win上卸载mysql</title>
         <pubTime>2018-10-24T08:00:00.000Z</pubTime>
         
         <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/07/24/redis1/</loc>
+    <lastmod>2018-10-24T11:35:50.220Z</lastmod>
+    <data>
+        <display>
+        <title>redis数据结构</title>
+        <pubTime>2018-07-23T16:27:00.000Z</pubTime>
+        
+        <tag>redis</tag>
          
          
            
@@ -77,26 +97,6 @@
            
              
               <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/07/24/redis1/</loc>
-    <lastmod>2018-07-24T08:27:49.082Z</lastmod>
-    <data>
-        <display>
-        <title>redis数据结构</title>
-        <pubTime>2018-07-23T16:27:00.000Z</pubTime>
-        
-        <tag>redis</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库" url="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
           
         </display>
     </data>
