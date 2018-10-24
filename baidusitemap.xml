@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/10/24/mysqldetail/</loc>
+    <lastmod>2018-10-24T09:35:24.824Z</lastmod>
+    <data>
+        <display>
+        <title>win上卸载mysql</title>
+        <pubTime>2018-10-24T08:00:00.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/28/genter/</loc>
-    <lastmod>2018-08-27T16:17:36.223Z</lastmod>
+    <lastmod>2018-08-28T10:51:04.006Z</lastmod>
     <data>
         <display>
         <title>yield与生成器</title>

@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>archiv | think and code</title>
+  <title>tag: mysql | think and code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -22,7 +22,7 @@
   <meta name="description" content="人生苦短">
 <meta property="og:type" content="website">
 <meta property="og:title" content="think and code">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/mysql/index.html">
 <meta property="og:site_name" content="think and code">
 <meta property="og:description" content="人生苦短">
 <meta name="twitter:card" content="summary">
@@ -164,74 +164,68 @@ var themeMenus = {};
       <div id="content" class="outer">
         
           <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 19 posts in total till now.</span></blockquote>
-
-
-
-
-	<!-- 分页显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/06/09/pythonunittest/" class="archive-article-date">
-		  <time datetime="2018-06-09T02:42:00.000Z" itemprop="datePublished">Jun 09, 2018</time>
-	  </a>
-      
+  
+    <article id="post-mysqldetail"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/06/09/pythonunittest/">python单元测试-unittest</a>
+      <a class="article-title" href="/2018/10/24/mysqldetail/">win上卸载mysql</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2018/05/29/vue01/" class="archive-article-date">
-		  <time datetime="2018-05-28T16:56:44.935Z" itemprop="datePublished">May 29, 2018</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/05/29/vue01/">Vue-初始</a>
-    </h1>
-  
+	Posted on <a href="/2018/10/24/mysqldetail/" class="article-date">
+	  <time datetime="2018-10-24T08:00:00.000Z" itemprop="datePublished">October 24, 2018</time>
+	</a>
 
-    </header>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="windows上卸载mysql"><a href="#windows上卸载mysql" class="headerlink" title="windows上卸载mysql"></a>windows上卸载mysql</h1><hr>
+<p>很多情况我们发现mysql数据库服务启动不了。或者忘记了数据库密码。导致不能登录，需要重新按照这时候就首先需要卸载干净再去装。这里我们重点说下如何在win上完全卸载mysql<br>1.停掉服务 cmd里面执行net stop mysql</p>
+<p>2.删除服务 cmd里面执行sc delete mysql</p>
+<p>3.卸载mysqlserver软件 </p>
+<p>4.删除安装的文件夹 一般默认安装的路径为</p>
+<blockquote>
+<p> C:\ProgramData\MySQL<br>   c:\Programx86\MySQL</p>
+</blockquote>
+<p>5.删除注册表</p>
+<ul>
+<li>删除HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL文件夹</li>
+<li>删除HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL的文件夹。</li>
+</ul>
+<p>6.机器重启下。即可完全卸载</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+      
+            
+      
+    </footer>
   </div>
+  
 </article>
-	
-	
-		</div></section>
-	
 
-	<!-- 页数指示器 -->
-	
-	  <nav id="page-nav">
-	    
-	    <a class="extend prev" rel="prev" href="/archives/page/3/">zurück</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/5/">weiter</a>
-	  </nav>
-	
+<!-- Table of Contents -->
 
+  
 
 
 </section>
